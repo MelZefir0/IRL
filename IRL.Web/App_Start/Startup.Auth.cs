@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using IRL.Web.Models;
+using IRL.Data;
 
 namespace IRL.Web
 {
