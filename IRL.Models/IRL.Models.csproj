@@ -54,7 +54,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContactCreate.cs" />
+    <Compile Include="ContactDetail.cs" />
     <Compile Include="ContactListItem.cs" />
+    <Compile Include="InterestDetail.cs" />
+    <Compile Include="InterestListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

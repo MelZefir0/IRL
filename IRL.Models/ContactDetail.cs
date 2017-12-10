@@ -7,24 +7,27 @@ using System.Threading.Tasks;
 
 namespace IRL.Models
 {
-    public class ContactCreate
+    public class ContactDetail
     {
-        [Required]
-        [MaxLength(30)]
-        public string FirstName { get; set; }
+        [Key]
+        public int ContactId { get; set; }
 
-        [MaxLength(30)]
         public string LastName { get; set; }
 
-        [MaxLength(30)]
+        [Required]
+        public string FirstName { get; set; }
+
         public string Nickname { get; set; }
 
-        [MaxLength(300)]
         public string Address { get; set; }
 
         public int PhoneNumber { get; set; }
 
-        [MaxLength(8000)]
         public string Notes { get; set; }
+
+        public DateTimeOffset CreatedUtc { get; set; }
+ 
+        public override string ToString() => $"[{FirstName}] {FirstName}";
+        
     }
 }

@@ -53,11 +53,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContactService.cs" />
+    <Compile Include="IInterestService.cs" />
+    <Compile Include="InterestService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IRL.Data\IRL.Data.csproj">
+      <Project>{e5e273b1-0c88-4f88-8cbd-f93e6f4f40f6}</Project>
+      <Name>IRL.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IRL.Models\IRL.Models.csproj">
+      <Project>{F8FC9276-C80B-471F-BF46-CE138B5BBF12}</Project>
+      <Name>IRL.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

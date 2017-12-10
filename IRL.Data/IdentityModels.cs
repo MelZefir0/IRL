@@ -44,6 +44,12 @@ namespace IRL.Data
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
         }
+
+        public System.Data.Entity.DbSet<IRL.Data.Interest> Interests { get; set; }
+
+        //public System.Data.Entity.DbSet<IRL.Models.InterestDetail> InterestDetails { get; set; }
+
+        //public DbSet<IRL.Models.ContactDetail> ContactDetails { get; set; }
     }
 
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>

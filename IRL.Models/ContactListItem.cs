@@ -9,7 +9,9 @@ namespace IRL.Models
 {
     public class ContactListItem
     {
-        //public int ContactId { get; set; }
+        [Key]
+        public int ContactId { get; set; }
+
         public string Name { get; set; }
 
         [Display(Name="Added")]

@@ -55,11 +55,36 @@
   <ItemGroup>
     <Compile Include="Contact.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Interest.cs" />
+    <Compile Include="Migrations\201712070515007_InitialCreate.cs" />
+    <Compile Include="Migrations\201712070515007_InitialCreate.Designer.cs">
+      <DependentUpon>201712070515007_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712081926587_initial.cs" />
+    <Compile Include="Migrations\201712081926587_initial.Designer.cs">
+      <DependentUpon>201712081926587_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712100027144_Interest .cs" />
+    <Compile Include="Migrations\201712100027144_Interest .Designer.cs">
+      <DependentUpon>201712100027144_Interest .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201712070515007_InitialCreate.resx">
+      <DependentUpon>201712070515007_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712081926587_initial.resx">
+      <DependentUpon>201712081926587_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712100027144_Interest .resx">
+      <DependentUpon>201712100027144_Interest .cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
