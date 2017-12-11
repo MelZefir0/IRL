@@ -7,13 +7,13 @@ namespace IRL.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class Interest : IMigrationMetadata
+    public sealed partial class changedDBset : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Interest));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(changedDBset));
         
         string IMigrationMetadata.Id
         {
-            get { return "201712100027144_Interest "; }
+            get { return "201712111403211_changedDBset"; }
         }
         
         string IMigrationMetadata.Source

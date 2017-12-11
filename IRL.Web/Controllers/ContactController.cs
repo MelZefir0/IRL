@@ -11,6 +11,19 @@ namespace IRL.Web.Controllers
 {
     public class ContactController : Controller
     {
+        private readonly Lazy<IContactService> _contactService;
+
+        public ContactController()
+        {                      
+            _contactService = new Lazy<IContactService>(() =>
+                new ContactService(Guid.Parse(User.Identity.GetUserId())));
+        }
+
+        public ContactController(Lazy<IContactService> contactService)
+        {
+            _contactService = contactService;
+        }
+
         // GET: Contact
         public ActionResult Index()
         {
@@ -57,6 +70,29 @@ namespace IRL.Web.Controllers
             var model = service.GetContactById(contactId);
 
             return View(model);
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var service = CreateContactService();
+            var model = service.GetContactById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateContactService();
+            service.DeleteContact(id);
+
+            TempData["SaveResult"] = "Contact deleted";
+
+
+            return RedirectToAction("Index");
         }
     }
 }

@@ -8,49 +8,49 @@ using System.Threading.Tasks;
 
 namespace IRL.Services
 {
-    public class InterestService /* : IInterestService*/
+    public class InterestService : IInterestService
     {
-       private readonly int interestId;
+       private readonly Interest interestId;
 
-        public InterestService(int id)
+        public InterestService(Interest id)
         {
             interestId = id;
         }
 
-        //public Interest GetInterestById(int id)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public Interest GetInterestById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<InterestListItem> GetInterests()
+        {
+            throw new NotImplementedException();
+        }
 
         //public IEnumerable<InterestListItem> GetInterests()
         //{
-        //    throw new NotImplementedException();
+        //    using (var ctx = new ApplicationDbContext())
+        //    {
+        //        var query =
+        //            ctx
+        //                .Interests
+        //                .Where(e => e.InterestId == interestId)
+        //                .Select(
+        //                    e =>
+        //                        new InterestListItem
+        //                        {
+        //                            InterestId = e.InterestId,
+        //                            Item = e.Item,
+        //                            IsChecked = e.IsChecked
+        //                        }
+        //                );
+        //        return query.ToArray();
+        //    }
         //}
 
-        //public bool IsChecked(int id)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        public IEnumerable<InterestDetail> GetInterests()
+        public bool IsChecked(int id)
         {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var query =
-                    ctx
-                        .Interests
-                        .Where(e => e.InterestId == interestId)
-                        .Select(
-                            e =>
-                                new InterestDetail
-                                {
-                                    InterestId = e.InterestId,
-                                    Item = e.Item,
-                                    IsChecked = e.IsChecked
-                                }
-                        );
-                return query.ToArray();
-            }
+            throw new NotImplementedException();
         }
     }
 }

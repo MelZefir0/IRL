@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="ContactCreate.cs" />
     <Compile Include="ContactDetail.cs" />
+    <Compile Include="ContactEdit.cs" />
     <Compile Include="ContactListItem.cs" />
     <Compile Include="InterestDetail.cs" />
     <Compile Include="InterestListItem.cs" />

@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContactService.cs" />
+    <Compile Include="IContactService.cs" />
     <Compile Include="IInterestService.cs" />
     <Compile Include="InterestService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

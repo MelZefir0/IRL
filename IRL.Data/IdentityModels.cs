@@ -33,6 +33,7 @@ namespace IRL.Data
         }
 
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Interest> Interests { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -44,12 +45,6 @@ namespace IRL.Data
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
         }
-
-        public System.Data.Entity.DbSet<IRL.Data.Interest> Interests { get; set; }
-
-        //public System.Data.Entity.DbSet<IRL.Models.InterestDetail> InterestDetails { get; set; }
-
-        //public DbSet<IRL.Models.ContactDetail> ContactDetails { get; set; }
     }
 
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>

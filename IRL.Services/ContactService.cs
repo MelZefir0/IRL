@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace IRL.Services
 {
-    public class ContactService
+    public class ContactService : IContactService
     {
         private readonly Guid _userId;
 
@@ -47,7 +47,7 @@ namespace IRL.Services
                         e =>
                         new ContactListItem
                         {
-                            Name = e.FirstName,
+                            FirstName = e.FirstName,
                             CreatedUTC = e.CreatedUtc
                         }
                     );
@@ -76,6 +76,42 @@ namespace IRL.Services
                         CreatedUtc = entity.CreatedUtc
 
                     };
+            }
+        }
+
+        public bool UpdateContact(ContactEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Contacts
+                        .Single(e => e.ContactId == model.ContactId && e.UserId == _userId);
+
+                entity.FirstName = model.FirstName;
+                entity.LastName = model.LastName;
+                entity.Nickname = model.Nickname;
+                entity.Address = model.Address;
+                entity.PhoneNumber = model.PhoneNumber;
+                entity.Notes = model.Notes;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteContact(int contactId)
+        {
+            {
+                using (var ctx = new ApplicationDbContext())
+                {
+                    var entity =
+                        ctx
+                            .Contacts
+                            .Single(e => e.ContactId == contactId && e.UserId == _userId);
+
+                    ctx.Contacts.Remove(entity);
+                    return ctx.SaveChanges() == 1;
+                }
             }
         }
     }

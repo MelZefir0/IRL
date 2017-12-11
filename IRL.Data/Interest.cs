@@ -14,8 +14,6 @@ namespace IRL.Data
 
             [Required]
             public string Item { get; set; }
-            
-            public bool IsChecked { get; set; }
         
     }
 }

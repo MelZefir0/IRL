@@ -64,9 +64,13 @@
     <Compile Include="Migrations\201712081926587_initial.Designer.cs">
       <DependentUpon>201712081926587_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712100027144_Interest .cs" />
-    <Compile Include="Migrations\201712100027144_Interest .Designer.cs">
-      <DependentUpon>201712100027144_Interest .cs</DependentUpon>
+    <Compile Include="Migrations\201712101744523_Interest.cs" />
+    <Compile Include="Migrations\201712101744523_Interest.Designer.cs">
+      <DependentUpon>201712101744523_Interest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712111403211_changedDBset.cs" />
+    <Compile Include="Migrations\201712111403211_changedDBset.Designer.cs">
+      <DependentUpon>201712111403211_changedDBset.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,8 +86,11 @@
     <EmbeddedResource Include="Migrations\201712081926587_initial.resx">
       <DependentUpon>201712081926587_initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712100027144_Interest .resx">
-      <DependentUpon>201712100027144_Interest .cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712101744523_Interest.resx">
+      <DependentUpon>201712101744523_Interest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712111403211_changedDBset.resx">
+      <DependentUpon>201712111403211_changedDBset.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

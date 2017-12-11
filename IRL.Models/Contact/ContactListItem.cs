@@ -12,11 +12,13 @@ namespace IRL.Models
         [Key]
         public int ContactId { get; set; }
 
-        public string Name { get; set; }
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
 
         [Display(Name="Added")]
         public DateTimeOffset CreatedUTC { get; set; }
 
-        public override string ToString() => Name;
+        public override string ToString() => FirstName;
     }
 }

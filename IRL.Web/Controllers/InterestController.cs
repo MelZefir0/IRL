@@ -10,10 +10,10 @@ namespace IRL.Web.Controllers
     public class InterestController : Controller
     {
         // GET: Interest
-        public ActionResult Index(int id)
-        {
-            var model = InterestService.GetInterests();
-            return View(model);
-        }
+        //public ActionResult Index(int id)
+        //{
+        //    var model = InterestService.GetInterests();
+        //    return View(model);
+        //}
     }
 }
