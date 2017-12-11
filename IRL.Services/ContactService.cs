@@ -23,7 +23,7 @@ namespace IRL.Services
                 new Contact()
                 {
                     UserId = _userId,
-                    LastName = model. LastName,
+                    LastName = model.LastName,
                     FirstName = model.FirstName,
                     CreatedUtc = DateTime.Now
 

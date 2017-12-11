@@ -53,17 +53,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContactCreate.cs" />
-    <Compile Include="ContactDetail.cs" />
-    <Compile Include="ContactEdit.cs" />
-    <Compile Include="ContactListItem.cs" />
-    <Compile Include="InterestDetail.cs" />
-    <Compile Include="InterestListItem.cs" />
+    <Compile Include="Contact\ContactCreate.cs" />
+    <Compile Include="Contact\ContactDetail.cs" />
+    <Compile Include="Contact\ContactEdit.cs" />
+    <Compile Include="Contact\ContactListItem.cs" />
+    <Compile Include="Interest\InterestDetail.cs" />
+    <Compile Include="Interest\InterestListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

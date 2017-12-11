@@ -282,6 +282,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\IRL.Contracts\IRL.Contracts.csproj">
+      <Project>{da6f1c14-7452-4e9b-ac68-520c7a4c0204}</Project>
+      <Name>IRL.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IRL.Data\IRL.Data.csproj">
       <Project>{e5e273b1-0c88-4f88-8cbd-f93e6f4f40f6}</Project>
       <Name>IRL.Data</Name>

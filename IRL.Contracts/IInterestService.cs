@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace IRL.Services
 {
-    interface IInterestService
+    public interface IInterestService
     {
         IEnumerable<InterestListItem> GetInterests();
         Interest GetInterestById(int id);
