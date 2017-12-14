@@ -40,8 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IContactInterestService.cs" />
     <Compile Include="IContactService.cs" />
     <Compile Include="IInterestService.cs" />
+    <Compile Include="ISuggestionService.cs" />
+    <Compile Include="IUserInterestService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

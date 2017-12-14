@@ -12,7 +12,6 @@ namespace IRL.Data
         [Key]
         public int ContactId { get; set; }
 
-        [Required]
         public Guid UserId { get; set; }
 
         [Required]

@@ -1,5 +1,4 @@
 ﻿using IRL.Models;
-using IRL.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace IRL.Contracts
 {
-    public interface IInterestService
+    public interface IUserInterestService
     {
-        ICollection<InterestListItem> GetInterests();
-        Interest GetInterestById(int id);
+        IEnumerable<InterestListItem> GetUserInterests();
+        bool IsChecked();
     }
 }

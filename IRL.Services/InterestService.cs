@@ -5,52 +5,68 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IRL.Contracts;
 
 namespace IRL.Services
 {
-    public class InterestService : IInterestService
+    public class InterestService /*: /*IInterestService*/
     {
-       private readonly Interest interestId;
+        private Guid _userId;
 
-        public InterestService(Interest id)
+        public InterestService(Guid UserId)
         {
-            interestId = id;
+            _userId = UserId;
         }
 
-        public Interest GetInterestById(int id)
+        private Interest GetInterestsFromDatabase(ApplicationDbContext context, int interestId)
         {
-            throw new NotImplementedException();
+            return
+                context
+                    .Interests
+                    .SingleOrDefault(e => e.InterestId == interestId);
         }
 
-        public IEnumerable<InterestListItem> GetInterests()
+        public InterestDetail GetInterestById(int interestId)
         {
-            throw new NotImplementedException();
+            Interest entity;
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                entity = GetInterestsFromDatabase(ctx, interestId);
+            }
+
+            //if (entity == null) return new Interest();
+
+            return
+                new InterestDetail
+                {
+                    InterestId = entity.InterestId,
+                    Item = entity.Item,
+                };
         }
 
-        //public IEnumerable<InterestListItem> GetInterests()
+        public ICollection<InterestListItem> GetInterests()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Interests
+                        .Select(
+                            e =>
+                                new InterestListItem()
+                                {
+                                    InterestId = e.InterestId,
+                                    Item = e.Item,
+                                }
+                        );
+                return query.ToList();
+            }
+        }
+
+        //public bool IsChecked(int id)
         //{
-        //    using (var ctx = new ApplicationDbContext())
-        //    {
-        //        var query =
-        //            ctx
-        //                .Interests
-        //                .Where(e => e.InterestId == interestId)
-        //                .Select(
-        //                    e =>
-        //                        new InterestListItem
-        //                        {
-        //                            InterestId = e.InterestId,
-        //                            Item = e.Item,
-        //                            IsChecked = e.IsChecked
-        //                        }
-        //                );
-        //        return query.ToArray();
-        //    }
+        //    throw new NotImplementedException();
         //}
-
-        public bool IsChecked(int id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

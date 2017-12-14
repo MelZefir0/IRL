@@ -55,6 +55,9 @@
   <ItemGroup>
     <Compile Include="Contact.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="ContactInterest.cs" />
+    <Compile Include="Suggestion.cs" />
+    <Compile Include="UserInterest.cs" />
     <Compile Include="Interest.cs" />
     <Compile Include="Migrations\201712070515007_InitialCreate.cs" />
     <Compile Include="Migrations\201712070515007_InitialCreate.Designer.cs">
@@ -99,6 +102,12 @@
     <EmbeddedResource Include="Migrations\201712111455185_Stuff.resx">
       <DependentUpon>201712111455185_Stuff.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IRL.Models\IRL.Models.csproj">
+      <Project>{F8FC9276-C80B-471F-BF46-CE138B5BBF12}</Project>
+      <Name>IRL.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

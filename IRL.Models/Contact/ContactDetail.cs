@@ -18,6 +18,14 @@ namespace IRL.Models
         public string Notes { get; set; }
         [Display(Name="Created")]
         public DateTimeOffset CreatedUtc { get; set; }
-        public override string ToString() => $"[{FirstName}] {FirstName}";
+
+        public string FullName
+        {
+            get
+            {
+                return FirstName + " " + LastName;
+            }
+        }
+
     }
 }

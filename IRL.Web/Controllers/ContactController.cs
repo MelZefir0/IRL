@@ -9,33 +9,42 @@ using System.Web.Mvc;
 
 namespace IRL.Web.Controllers
 {
+    [Authorize]
     public class ContactController : Controller
     {
-        private readonly Lazy<IContactService> _contactService;
+        //private readonly Lazy<IContactService> _contactService;
 
-        public ContactController()
-        {                      
-            _contactService = new Lazy<IContactService>(() =>
-                new ContactService(Guid.Parse(User.Identity.GetUserId())));
-        }
+        //public ContactController()
+        //{                      
+        //    _contactService = new Lazy<IContactService>(() =>
+        //        new ContactService(Guid.Parse(User.Identity.GetUserId())));
+        //}
 
-        public ContactController(Lazy<IContactService> contactService)
-        {
-            _contactService = contactService;
-        }
+        //public ContactController(Lazy<IContactService> contactService)
+        //{
+        //    _contactService = contactService;
+        //}
 
         // GET: Contact
-        public ActionResult Index()
+
+        private ContactService CreateContactService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new ContactService(userId);
+            return service;
+        }
+
+        public ActionResult Index()
+        {
+            var service = CreateContactService();
             var model = service.GetContacts();
             return View(model);
         }
 
         public ActionResult Create()
         {
-            return View();
+            var model = new ContactCreate();
+            return View(model);
         }
 
         [HttpPost]
@@ -57,20 +66,54 @@ namespace IRL.Web.Controllers
             return View(model);
         }
 
-        private ContactService CreateContactService()
-        {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new ContactService(userId);
-            return service;
-        }
-
-        public ActionResult Details(int contactId)
+        public ActionResult Edit(int id)
         {
             var service = CreateContactService();
-            var model = service.GetContactById(contactId);
-
+            var detail = service.GetContactById(id);
+            var model =
+                new ContactEdit
+                {
+                    ContactId = detail.ContactId,
+                    FirstName = detail.FirstName,
+                    LastName = detail.LastName,
+                    Nickname = detail.Nickname,
+                    Address = detail.Address,
+                    PhoneNumber = detail.PhoneNumber,
+                    Notes = detail.Notes
+                };
             return View(model);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, ContactEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.ContactId != id)
+            {
+                ModelState.AddModelError("", "Error");
+                return View(model);
+            }
+
+            var service = CreateContactService();
+
+            if (service.UpdateContact(model))
+            {
+                TempData["SaveResult"] = "Contact updated";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Could not be updated.");
+            return View(model);
+        }
+
+      public ActionResult Details(int id)
+       {
+           var model = CreateContactService().GetContactById(id);
+
+           return View(model);
+       }
 
         [ActionName("Delete")]
         public ActionResult Delete(int id)

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IRL.Services
+namespace IRL.Contracts
 {
     public interface IContactService
     {

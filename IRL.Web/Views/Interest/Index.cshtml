@@ -1,0 +1,52 @@
+﻿@model IEnumerable<IRL.Models.InterestListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+
+@foreach (var item in Model)
+ {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Item)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsChecked)
+        </td>
+    </tr>
+ }
+</table>
+
+@section scripts {
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function () {
+            $("i[data-toggle='check']")
+                .css({ "cursor": "pointer" })
+                .click(function (e) {
+                    var target = $(e.target);
+                    var interestId = target.attr("data-id");
+                    var checkSet = target.hasClass("glyphicon-heart");
+
+                    $.ajax({
+                        method: checkSet ? "DELETE" : "PUT",
+                        url: "/api/interests/" + noteId + "/heart",
+                        data: null
+                    })
+                        .done(function (r) {
+                            target.removeClass();
+                            target.addClass("glyphicon " + (checkSet ? "glyphicon-heart-empty" : "glyphicon-heart"));
+                        })
+                        .fail(function (r) {
+                            alert("Failed to select");
+                        });
+                });
+        });
+    </script>
+}
