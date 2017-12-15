@@ -15,7 +15,7 @@ namespace IRL.Services
             throw new NotImplementedException();
         }
 
-        public IEnumerable<UserInterest> GetUserInterests()
+        public IEnumerable<InterestUser> GetUserInterests()
         {
             throw new NotImplementedException();
         }

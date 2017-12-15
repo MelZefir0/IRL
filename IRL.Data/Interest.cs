@@ -14,6 +14,5 @@ namespace IRL.Data
 
             [Required]
             public string Item { get; set; }
-        
     }
 }

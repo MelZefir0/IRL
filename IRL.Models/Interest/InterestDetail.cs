@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace IRL.Models
 {
+    /// <summary>
+    /// May not need
+    /// </summary>
     public class InterestDetail
     {
         [Key]

@@ -17,7 +17,6 @@ namespace IRL.Data
         [Required]
         public string FirstName { get; set; }
 
-        [Required]
         public string LastName { get; set; }
 
         public string Nickname { get; set; }

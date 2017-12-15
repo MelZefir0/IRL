@@ -15,7 +15,7 @@ namespace IRL.Services
             throw new NotImplementedException();
         }
 
-        public bool IsChecked()
+        public bool IsSelected()
         {
             throw new NotImplementedException();
         }

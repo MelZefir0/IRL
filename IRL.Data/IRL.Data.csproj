@@ -56,30 +56,18 @@
     <Compile Include="Contact.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="ContactInterest.cs" />
+    <Compile Include="Migrations\201712151447021_RemovedForeignKey.cs" />
+    <Compile Include="Migrations\201712151447021_RemovedForeignKey.Designer.cs">
+      <DependentUpon>201712151447021_RemovedForeignKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712152037289_fingersCrossed.cs" />
+    <Compile Include="Migrations\201712152037289_fingersCrossed.Designer.cs">
+      <DependentUpon>201712152037289_fingersCrossed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Suggestion.cs" />
     <Compile Include="UserInterest.cs" />
     <Compile Include="Interest.cs" />
-    <Compile Include="Migrations\201712070515007_InitialCreate.cs" />
-    <Compile Include="Migrations\201712070515007_InitialCreate.Designer.cs">
-      <DependentUpon>201712070515007_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712081926587_initial.cs" />
-    <Compile Include="Migrations\201712081926587_initial.Designer.cs">
-      <DependentUpon>201712081926587_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712101744523_Interest.cs" />
-    <Compile Include="Migrations\201712101744523_Interest.Designer.cs">
-      <DependentUpon>201712101744523_Interest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712111403211_changedDBset.cs" />
-    <Compile Include="Migrations\201712111403211_changedDBset.Designer.cs">
-      <DependentUpon>201712111403211_changedDBset.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712111455185_Stuff.cs" />
-    <Compile Include="Migrations\201712111455185_Stuff.Designer.cs">
-      <DependentUpon>201712111455185_Stuff.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -87,27 +75,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712070515007_InitialCreate.resx">
-      <DependentUpon>201712070515007_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712081926587_initial.resx">
-      <DependentUpon>201712081926587_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712101744523_Interest.resx">
-      <DependentUpon>201712101744523_Interest.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712111403211_changedDBset.resx">
-      <DependentUpon>201712111403211_changedDBset.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712111455185_Stuff.resx">
-      <DependentUpon>201712111455185_Stuff.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\IRL.Models\IRL.Models.csproj">
       <Project>{F8FC9276-C80B-471F-BF46-CE138B5BBF12}</Project>
       <Name>IRL.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201712151447021_RemovedForeignKey.resx">
+      <DependentUpon>201712151447021_RemovedForeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712152037289_fingersCrossed.resx">
+      <DependentUpon>201712152037289_fingersCrossed.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,6 +10,6 @@ namespace IRL.Contracts
     public interface IContactInterestService
     {
         IEnumerable<ContactInterest> GetContactInterests();
-        bool IsChecked();
+        bool IsSelected();
     }
 }

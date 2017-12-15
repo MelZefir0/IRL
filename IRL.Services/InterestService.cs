@@ -26,24 +26,24 @@ namespace IRL.Services
                     .SingleOrDefault(e => e.InterestId == interestId);
         }
 
-        public InterestDetail GetInterestById(int interestId)
-        {
-            Interest entity;
+        //public InterestDetail GetInterestById(int interestId)
+        //{
+        //    Interest entity;
 
-            using (var ctx = new ApplicationDbContext())
-            {
-                entity = GetInterestsFromDatabase(ctx, interestId);
-            }
+        //    using (var ctx = new ApplicationDbContext())
+        //    {
+        //        entity = GetInterestsFromDatabase(ctx, interestId);
+        //    }
 
-            //if (entity == null) return new Interest();
+        //    //if (entity == null) return new Interest();
 
-            return
-                new InterestDetail
-                {
-                    InterestId = entity.InterestId,
-                    Item = entity.Item,
-                };
-        }
+        //    return
+        //        new InterestDetail
+        //        {
+        //            InterestId = entity.InterestId,
+        //            Item = entity.Item,
+        //        };
+        //}
 
         public ICollection<InterestListItem> GetInterests()
         {
@@ -64,7 +64,8 @@ namespace IRL.Services
             }
         }
 
-        //public bool IsChecked(int id)
+
+        //public bool IsSelected(int id)
         //{
         //    throw new NotImplementedException();
         //}

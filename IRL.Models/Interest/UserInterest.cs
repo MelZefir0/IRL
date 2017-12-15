@@ -14,6 +14,5 @@ namespace IRL.Models
         public Guid UserId { get; set; }
 
         public string InterestId { get; set; }
-
     }
 }

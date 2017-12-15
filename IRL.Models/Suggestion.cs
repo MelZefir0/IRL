@@ -8,5 +8,10 @@ namespace IRL.Models
 {
     class Suggestion
     {
+        public int Id { get; set; }
+
+        public int InterestId { get; set; }
+
+        public string SuggestionItem { get; set; }
     }
 }
