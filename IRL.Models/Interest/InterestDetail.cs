@@ -17,7 +17,7 @@ namespace IRL.Models
 
         public string Item { get; set; }
 
-        [UIHint("Checked")]
-        public bool IsChecked { get; set; }
+        [UIHint("Starred")]
+        public bool IsSelected { get; set; }
     }
 }

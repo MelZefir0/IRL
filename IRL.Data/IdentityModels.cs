@@ -48,8 +48,6 @@ namespace IRL.Data
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
         }
-
-        public System.Data.Entity.DbSet<IRL.Models.InterestListItem> InterestListItems { get; set; }
     }
 
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
