@@ -15,7 +15,9 @@ namespace IRL.Data
 
         public Guid UserId { get; set; }
 
-        public string InterestId { get; set; }
+        public int InterestId { get; set; }
+
+        public string Item { get; set; }
 
         public virtual ICollection<Interest> Interests { get; set; }
     }

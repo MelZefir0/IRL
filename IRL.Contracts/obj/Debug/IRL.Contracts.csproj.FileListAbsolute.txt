@@ -16,3 +16,6 @@ C:\dev\IRL\IRL.Contracts\obj\Debug\IRL.Contracts.csprojResolveAssemblyReference.
 C:\dev\IRL\IRL.Contracts\obj\Debug\IRL.Contracts.csproj.CoreCompileInputs.cache
 C:\dev\IRL\IRL.Contracts\obj\Debug\IRL.Contracts.dll
 C:\dev\IRL\IRL.Contracts\obj\Debug\IRL.Contracts.pdb
+C:\dev\IRL\IRL.Contracts\bin\Debug\IRL.Contracts.dll.config
+C:\dev\IRL\IRL.Contracts\bin\Debug\EntityFramework.SqlServer.dll
+C:\dev\IRL\IRL.Contracts\bin\Debug\EntityFramework.SqlServer.xml

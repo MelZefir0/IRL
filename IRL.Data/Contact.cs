@@ -29,5 +29,7 @@ namespace IRL.Data
 
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
+
+        public virtual ICollection<Interest> Interests { get; set; }
     }
 }

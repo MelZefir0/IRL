@@ -64,10 +64,33 @@ namespace IRL.Services
             }
         }
 
+        public bool AddInterest(UserInterestModel model)
+        {
+            var entity =
+                new UserInterest()
+                {
+                    Id = model.Id,
+                    UserId = _userId,
+                    InterestId = model.InterestId,
+                    Item = model.Item
+                };
+            using (var ctx = new ApplicationDbContext())
+            {
+                ctx.UserInterests.Add(entity);
+                return ctx.SaveChanges() == 1;
+            }
 
-        //public bool IsSelected(int id)
-        //{
-        //    throw new NotImplementedException();
-        //}
+            //using (var ctx = new ApplicationDbContext())
+            //{
+
+            //    var entity =
+            //        ctx
+            //            .UserInterests
+            //            .Single(e => e.InterestId == interestId && e.UserId == _userId);
+            //    ctx.UserInterests.Add(entity);
+            //    return ctx.SaveChanges() == 1;
+
+            //}
+        }
     }
 }

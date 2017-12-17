@@ -50,6 +50,7 @@ namespace IRL.Data
         }
     }
 
+
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
     {
         public IdentityUserLoginConfiguration()

@@ -36,3 +36,4 @@ C:\dev\IRL\IRL.Services\obj\Debug\IRL.Services.csprojResolveAssemblyReference.ca
 C:\dev\IRL\IRL.Services\obj\Debug\IRL.Services.csproj.CoreCompileInputs.cache
 C:\dev\IRL\IRL.Services\obj\Debug\IRL.Services.dll
 C:\dev\IRL\IRL.Services\obj\Debug\IRL.Services.pdb
+C:\dev\IRL\IRL.Services\bin\Debug\IRL.Contracts.dll.config

@@ -160,3 +160,10 @@ C:\dev\IRL\IRL.Web\obj\Debug\IRL.Web.csprojResolveAssemblyReference.cache
 C:\dev\IRL\IRL.Web\obj\Debug\IRL.Web.csproj.CoreCompileInputs.cache
 C:\dev\IRL\IRL.Web\obj\Debug\IRL.Web.dll
 C:\dev\IRL\IRL.Web\obj\Debug\IRL.Web.pdb
+C:\dev\IRL\IRL.Web\bin\System.Net.Http.Formatting.dll
+C:\dev\IRL\IRL.Web\bin\System.Web.Http.dll
+C:\dev\IRL\IRL.Web\bin\System.Web.Http.WebHost.dll
+C:\dev\IRL\IRL.Web\bin\IRL.Contracts.dll.config
+C:\dev\IRL\IRL.Web\bin\System.Net.Http.Formatting.xml
+C:\dev\IRL\IRL.Web\bin\System.Web.Http.xml
+C:\dev\IRL\IRL.Web\bin\System.Web.Http.WebHost.xml

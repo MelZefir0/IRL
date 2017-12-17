@@ -31,7 +31,8 @@ C:\dev\IRL\IRL.Data\obj\Debug\IRL.Data.csprojResolveAssemblyReference.cache
 C:\dev\IRL\IRL.Data\bin\Debug\IRL.Models.dll
 C:\dev\IRL\IRL.Data\bin\Debug\IRL.Models.pdb
 C:\dev\IRL\IRL.Data\bin\Debug\IRL.Models.dll.config
-C:\dev\IRL\IRL.Data\obj\Debug\IRL.Data.Migrations.RemovedForeignKey.resources
+C:\dev\IRL\IRL.Data\obj\Debug\IRL.Data.Migrations.hm.resources
 C:\dev\IRL\IRL.Data\obj\Debug\IRL.Data.csproj.GenerateResource.Cache
-C:\dev\IRL\IRL.Data\obj\Debug\IRL.Data.Migrations.fingersCrossed.resources
-C:\dev\IRL\IRL.Data\obj\Debug\IRL.Data.Migrations.really.resources
+C:\dev\IRL\IRL.Data\obj\Debug\IRL.Data.Migrations.AddedInterestToContact.resources
+C:\dev\IRL\IRL.Data\obj\Debug\IRL.Data.Migrations.stuff.resources
+C:\dev\IRL\IRL.Data\obj\Debug\IRL.Data.Migrations.something.resources

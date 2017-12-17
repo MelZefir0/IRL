@@ -10,58 +10,52 @@
         @Html.ActionLink("Create New", "Create")
     </p>*@
 <table class="table">
-    @*<tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Item)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsSelected)
-            </th>
-            <th></th>
-        </tr>*@
-
-    @foreach (var item in Model)
+    @using (Html.BeginForm())
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Item)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsSelected, new { Id = item.InterestId })
-            </td>
-            @*<td>
-                    @Html.ActionLink("Edit", "Edit", new { id=item.InterestId }) |
-                    @Html.ActionLink("Details", "Details", new { id=item.InterestId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id=item.InterestId })
-                </td>*@
-        </tr>
+        @Html.AntiForgeryToken()
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Item)
+                </td>
+                <td>
+                    @Html.ActionLink("Add Interest", "Select", new { interestId = item.InterestId })
+                </td>
+            </tr>
+        }
     }
-
 </table>
+<div class="select">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Select" class="btn btn-default" />
+    </div>
+</div>
 
-@section scripts {
-    <script language="javascript" type="text/javascript">
-        $(document).ready(function () {
-            $("i[data-toggle='star']")
-                .css({ "cursor": "pointer" })
-                .click(function (e) {
-                    var target = $(e.target);
-                    var interestId = target.attr("data-id");
-                    var starSet = target.hasClass("glyphicon-star");
 
-                    $.ajax({
-                        method: starSet ? "DELETE" : "POST",
-                        url: "/api/interests/" + interestId + "/star",
-                        data: null
-                    })
-                        .done(function (r) {
-                            target.removeClass();
-                            target.addClass("glyphicon " + (starSet ? "glyphicon-star-empty" : "glyphicon-star"));
+@*@section scripts {
+        <script language="javascript" type="text/javascript">
+            $(document).ready(function () {
+                $("i[data-toggle='star']")
+                    .css({ "cursor": "pointer" })
+                    .click(function (e) {
+                        var target = $(e.target);
+                        var interestId = target.attr("data-id");
+                        var starSet = target.hasClass("glyphicon-star");
+
+                        $.ajax({
+                            method: starSet ? "DELETE" : "POST",
+                            url: "/api/interests/" + interestId + "/star",
+                            data: null
                         })
-                        .fail(function (r) {
-                            alert("Failed to change our stars");
-                        });
-                });
-        });
-    </script>
-}
+                            .done(function (r) {
+                                target.removeClass();
+                                target.addClass("glyphicon " + (starSet ? "glyphicon-star-empty" : "glyphicon-star"));
+                            })
+                            .fail(function (r) {
+                                alert("Failed to change our stars");
+                            });
+                    });
+            });
+        </script>
+    }*@
