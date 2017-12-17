@@ -18,12 +18,15 @@ namespace IRL.Services
             _userId = UserId;
         }
 
-        private Interest GetInterestsFromDatabase(ApplicationDbContext context, int interestId)
+        private Interest GetInterestsFromDatabase(ApplicationDbContext context, int interestId, string item)
         {
             return
                 context
                     .Interests
-                    .SingleOrDefault(e => e.InterestId == interestId);
+                    .SingleOrDefault(
+                           e => 
+                           e.InterestId == interestId &&
+                           e.Item == item);
         }
 
         //public InterestDetail GetInterestById(int interestId)
@@ -60,19 +63,19 @@ namespace IRL.Services
                                     Item = e.Item,
                                 }
                         );
-                return query.ToList();
+                return query.ToArray();
             }
         }
 
-        public bool AddInterest(UserInterestModel model)
+        public bool AddInterest(UserInterestModel model /*Interest item*/)
         {
+            //TODO: persist item from Interest 
             var entity =
                 new UserInterest()
                 {
-                    Id = model.Id,
                     UserId = _userId,
                     InterestId = model.InterestId,
-                    Item = model.Item
+                    //Item = item.ToString()
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -86,7 +89,7 @@ namespace IRL.Services
             //    var entity =
             //        ctx
             //            .UserInterests
-            //            .Single(e => e.InterestId == interestId && e.UserId == _userId);
+            //            .Single(e => e.InterestId == interestId && e.UserId == _userId && e.Item == item);
             //    ctx.UserInterests.Add(entity);
             //    return ctx.SaveChanges() == 1;
 

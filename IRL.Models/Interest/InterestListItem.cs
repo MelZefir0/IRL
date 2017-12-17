@@ -10,7 +10,6 @@ namespace IRL.Models
     public class InterestListItem
     {
 
-        [Key]
         public int InterestId { get; set; }
 
         public string Item { get; set; }

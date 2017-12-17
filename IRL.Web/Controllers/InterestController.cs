@@ -28,30 +28,27 @@ namespace IRL.Web.Controllers
         }
 
         [ActionName("Select")]
-        public ActionResult Select(int interestId)
+        public ActionResult Select(int interestId, string item)
         {
             var userModel = new UserInterestModel();
             var userId = Guid.Parse(User.Identity.GetUserId());
-            userModel.UserId = userId;
-
+            var svc = CreateInterestService();
             userModel.UserId = userId;
             userModel.InterestId = interestId;
-
-            //TODO: Add to database
-
+           
+            svc.AddInterest(userModel);
             return View(userModel);
         }
 
         [HttpPost]
-        [ActionName("Select")]
         [ValidateAntiForgeryToken]
-        public ActionResult Select(UserInterestModel model)
+        public ActionResult Select(UserInterestModel userModel)
         {
-            //if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid) return View(userModel);
 
             var service = CreateInterestService();
 
-            if (service.AddInterest(model))
+            if (service.AddInterest(userModel))
             {
                 TempData["SaveResult"] = "Your interest preference has been stored";
                 return RedirectToAction("Index");
