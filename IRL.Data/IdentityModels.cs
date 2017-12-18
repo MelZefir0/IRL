@@ -48,6 +48,8 @@ namespace IRL.Data
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
         }
+
+        public System.Data.Entity.DbSet<IRL.Models.ContactInterestModel> ContactInterestModels { get; set; }
     }
 
 

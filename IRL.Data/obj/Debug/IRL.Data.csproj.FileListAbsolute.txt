@@ -36,3 +36,4 @@ C:\dev\IRL\IRL.Data\obj\Debug\IRL.Data.csproj.GenerateResource.Cache
 C:\dev\IRL\IRL.Data\obj\Debug\IRL.Data.Migrations.AddedInterestToContact.resources
 C:\dev\IRL\IRL.Data\obj\Debug\IRL.Data.Migrations.stuff.resources
 C:\dev\IRL\IRL.Data\obj\Debug\IRL.Data.Migrations.something.resources
+C:\dev\IRL\IRL.Data\obj\Debug\IRL.Data.Migrations.ok.resources

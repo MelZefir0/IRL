@@ -108,7 +108,7 @@ namespace IRL.Web.Controllers
             return View(model);
         }
 
-      public ActionResult Details(int id)
+       public ActionResult Details(int id)
        {
            var model = CreateContactService().GetContactById(id);
 
