@@ -27,5 +27,8 @@ namespace IRL.Models
             }
         }
 
+
+
+        public virtual ICollection<InterestListItem> Interests { get; set; }
     }
 }

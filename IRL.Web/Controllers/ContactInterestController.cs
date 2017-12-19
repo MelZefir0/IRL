@@ -34,7 +34,7 @@ namespace IRL.Web.Controllers
             contact.ContactId = contactId;
             var svc = CreateInterestService();
             contactModel.InterestId = interestId;
-                       svc.AddInterest(contactModel);
+            svc.AddInterest();
             return View(contactModel);
         }
 

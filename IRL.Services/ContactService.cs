@@ -3,6 +3,7 @@ using IRL.Data;
 using IRL.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -71,6 +72,7 @@ namespace IRL.Services
         public ContactDetail GetContactById(int contactId)
         {
             Contact entity;
+            var svc = new ContactInterestService(_userId);
 
             using (var ctx = new ApplicationDbContext())
             {
@@ -89,8 +91,8 @@ namespace IRL.Services
                     Address = entity.Address,
                     PhoneNumber = entity.PhoneNumber,
                     Notes = entity.Notes,
-                    CreatedUtc = entity.CreatedUtc
-
+                    CreatedUtc = entity.CreatedUtc,
+                    //ContactInterests = svc.AddInterest()
                 };
         }
 

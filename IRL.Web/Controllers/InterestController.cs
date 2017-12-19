@@ -28,15 +28,23 @@ namespace IRL.Web.Controllers
         }
 
         [ActionName("Select")]
-        public ActionResult Select(int interestId, string item)
+        public ActionResult Select(int? id, int newInterest)
         {
             var userModel = new UserInterestModel();
             var userId = Guid.Parse(User.Identity.GetUserId());
             var svc = CreateInterestService();
+            var userInterest = svc.GetUserInterests(id);
+            var existingId = userInterest.OfType<UserInterestModel>().FirstOrDefault();
             userModel.UserId = userId;
-            userModel.InterestId = interestId;
-           
-            svc.AddInterest(userModel);
+            userModel.InterestId = newInterest;
+            //if (existingId == null)
+            //{
+            //    userModel.InterestId = newInterest;
+
+            //    svc.AddInterest(userModel);
+            //    return View(userModel);
+            //}
+
             return View(userModel);
         }
 
@@ -58,5 +66,39 @@ namespace IRL.Web.Controllers
 
             return RedirectToAction("Index");
         }
+
+        //[ActionName("Remove")]
+        //public ActionResult Remove(int interestId, string item)
+        //{
+        //    var svc = CreateInterestService();
+        //    var model = service.GetInterestById(interestId);
+
+        //    svc.RemoveInterest(userModel);
+        //    return View();
+        //}
+
+
+        //[ActionName("Delete")]
+        //public ActionResult Delete(int id)
+        //{
+        //    var service = CreateContactService();
+        //    var model = service.GetContactById(id);
+
+        //    return View(model);
+        //}
+
+        //[HttpPost]
+        //[ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeletePost(int id)
+        //{
+        //    var service = CreateContactService();
+        //    service.DeleteContact(id);
+
+        //    TempData["SaveResult"] = "Contact deleted";
+
+
+        //    return RedirectToAction("Index");
+        //}
     }
 }

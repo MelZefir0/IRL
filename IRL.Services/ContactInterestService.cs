@@ -9,7 +9,7 @@ using IRL.Contracts;
 
 namespace IRL.Services
 {
-  public class ContactInterestService /*: IContactInterestService*/
+    public class ContactInterestService /*: IContactInterestService*/
     {
         private Guid _userId;
 
@@ -47,9 +47,31 @@ namespace IRL.Services
                 return query.ToArray();
             }
         }
-            public bool AddInterest(ContactInterestModel model /*Interest item*/)
+
+        public ContactInterestDetail GetContactInterestById(int interestId, string item)
+        {
+            Interest entity;
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                entity = GetInterestsFromDatabase(ctx, interestId, item);
+            }
+
+            //if (entity == null) return new Interest();
+
+            return
+                new ContactInterestDetail
+                {
+                    InterestId = entity.InterestId,
+                    Item = entity.Item,
+                };
+        }
+
+
+        public bool AddInterest()
         {
             //TODO: persist item from Interest 
+            var model = new ContactInterestModel();
             var entity =
                 new ContactInterest()
                 {
@@ -57,11 +79,13 @@ namespace IRL.Services
                     InterestId = model.InterestId,
                     //Item = item.ToString()
                 };
+
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.ContactInterests.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
+
         }
     }
 }

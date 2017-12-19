@@ -1,0 +1,39 @@
+﻿@model IEnumerable<IRL.Models.InterestListItem>
+@{
+    ViewBag.Title = "ContactInterest";
+}
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+
+@if (TempData.ContainsKey("SaveResult"))
+{
+    <div class="alert alert-success fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
+}
+<table class="table">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Item)
+                </td>
+                <td>
+                    @Html.ActionLink("Add Interest", "Select", new { interestId = item.InterestId }, new { item = item.Item })
+                </td>
+            </tr>
+        }
+    }
+</table>
+<div>
+    @Html.ActionLink("Back", "Home")
+</div>
+
+

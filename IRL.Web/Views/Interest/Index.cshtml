@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Your Interests</h2>
+<h2>Add Your Interests</h2>
 
 @*<p>
         @Html.ActionLink("Create New", "Create")
@@ -30,7 +30,7 @@
                         @Html.DisplayFor(modelItem => item.Item)
                     </td>
                     <td>
-                        @Html.ActionLink("Add Interest", "Select", new { interestId = item.InterestId }, new { item = item.Item })
+                        @Html.ActionLink("Add Interest", "Select", new { id = item.InterestId })
                     </td>
                 </tr>
             }

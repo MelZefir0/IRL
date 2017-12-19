@@ -56,25 +56,9 @@
     <Compile Include="Contact.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="ContactInterest.cs" />
-    <Compile Include="Migrations\201712162105020_hm.cs" />
-    <Compile Include="Migrations\201712162105020_hm.Designer.cs">
-      <DependentUpon>201712162105020_hm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712170009269_AddedInterestToContact.cs" />
-    <Compile Include="Migrations\201712170009269_AddedInterestToContact.Designer.cs">
-      <DependentUpon>201712170009269_AddedInterestToContact.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712170138181_stuff.cs" />
-    <Compile Include="Migrations\201712170138181_stuff.Designer.cs">
-      <DependentUpon>201712170138181_stuff.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712170208132_something.cs" />
-    <Compile Include="Migrations\201712170208132_something.Designer.cs">
-      <DependentUpon>201712170208132_something.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712180120015_ok.cs" />
-    <Compile Include="Migrations\201712180120015_ok.Designer.cs">
-      <DependentUpon>201712180120015_ok.cs</DependentUpon>
+    <Compile Include="Migrations\201712190433553_new.cs" />
+    <Compile Include="Migrations\201712190433553_new.Designer.cs">
+      <DependentUpon>201712190433553_new.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Suggestion.cs" />
@@ -93,20 +77,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712162105020_hm.resx">
-      <DependentUpon>201712162105020_hm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712170009269_AddedInterestToContact.resx">
-      <DependentUpon>201712170009269_AddedInterestToContact.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712170138181_stuff.resx">
-      <DependentUpon>201712170138181_stuff.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712170208132_something.resx">
-      <DependentUpon>201712170208132_something.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712180120015_ok.resx">
-      <DependentUpon>201712180120015_ok.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712190433553_new.resx">
+      <DependentUpon>201712190433553_new.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

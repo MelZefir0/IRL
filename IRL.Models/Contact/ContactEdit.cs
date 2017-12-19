@@ -24,5 +24,9 @@ namespace IRL.Models
                 return FirstName + " " + LastName;
             }
         }
+
+
+
+        public virtual ICollection<InterestListItem> Interests { get; set; }
     }
 }

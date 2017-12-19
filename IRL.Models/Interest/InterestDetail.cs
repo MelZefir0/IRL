@@ -10,7 +10,7 @@ namespace IRL.Models
     /// <summary>
     /// May not need
     /// </summary>
-    public class InterestDetail
+    public class ContactInterestDetail
     {
         [Key]
         public int InterestId { get; set; }

@@ -29,24 +29,16 @@ namespace IRL.Services
                            e.Item == item);
         }
 
-        //public InterestDetail GetInterestById(int interestId)
-        //{
-        //    Interest entity;
-
-        //    using (var ctx = new ApplicationDbContext())
-        //    {
-        //        entity = GetInterestsFromDatabase(ctx, interestId);
-        //    }
-
-        //    //if (entity == null) return new Interest();
-
-        //    return
-        //        new InterestDetail
-        //        {
-        //            InterestId = entity.InterestId,
-        //            Item = entity.Item,
-        //        };
-        //}
+        private UserInterest GetUserInterestsFromDatabase(ApplicationDbContext context, int interestId, Guid _userId)
+        {
+            return
+                context
+                    .UserInterests
+                    .SingleOrDefault(
+                           e =>
+                           e.InterestId == interestId &&
+                           e.UserId == _userId);
+        }
 
         public ICollection<InterestListItem> GetInterests()
         {
@@ -58,6 +50,26 @@ namespace IRL.Services
                         .Select(
                             e =>
                                 new InterestListItem()
+                                {
+                                    InterestId = e.InterestId,
+                                    Item = e.Item,
+                                }
+                        );
+                return query.ToArray();
+            }
+        }
+
+        public IEnumerable<UserInterestModel> GetUserInterests(int? id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .UserInterests
+                        .Where(e => e.InterestId == id)
+                        .Select(
+                            e =>
+                                new UserInterestModel()
                                 {
                                     InterestId = e.InterestId,
                                     Item = e.Item,
@@ -82,18 +94,22 @@ namespace IRL.Services
                 ctx.UserInterests.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
+        }
 
-            //using (var ctx = new ApplicationDbContext())
-            //{
+        public bool RemoveInterest(int interestId)
+        {
+            {
+                using (var ctx = new ApplicationDbContext())
+                {
+                    var entity =
+                        ctx
+                            .UserInterests
+                            .Single(e => e.InterestId == interestId && e.UserId == _userId);
 
-            //    var entity =
-            //        ctx
-            //            .UserInterests
-            //            .Single(e => e.InterestId == interestId && e.UserId == _userId && e.Item == item);
-            //    ctx.UserInterests.Add(entity);
-            //    return ctx.SaveChanges() == 1;
-
-            //}
+                    ctx.UserInterests.Remove(entity);
+                    return ctx.SaveChanges() == 1;
+                }
+            }
         }
     }
 }
