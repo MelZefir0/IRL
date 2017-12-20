@@ -71,29 +71,31 @@ namespace IRL.Services
 
         public ContactDetail GetContactById(int contactId)
         {
-            Contact entity;
-            var svc = new ContactInterestService(_userId);
-
             using (var ctx = new ApplicationDbContext())
             {
-                entity = GetContactFromDatabase(ctx, contactId);
-            }
+                var contact =
+                    ctx
+                        .Contacts
+                        .SingleOrDefault(e => e.ContactId == contactId);
 
-            if (entity == null) return new ContactDetail();
+
+                var contactInterests = new ContactInterestService(_userId, contactId);
 
             return
                 new ContactDetail
                 {
-                    ContactId = entity.ContactId,
-                    FirstName = entity.FirstName,
-                    LastName = entity.LastName,
-                    Nickname = entity.Nickname,
-                    Address = entity.Address,
-                    PhoneNumber = entity.PhoneNumber,
-                    Notes = entity.Notes,
-                    CreatedUtc = entity.CreatedUtc,
-                    //ContactInterests = svc.AddInterest()
+                    ContactId = contact.ContactId,
+                    FirstName = contact.FirstName,
+                    LastName = contact.LastName,
+                    Nickname = contact.Nickname,
+                    Address = contact.Address,
+                    PhoneNumber = contact.PhoneNumber,
+                    Notes = contact.Notes,
+                    CreatedUtc = contact.CreatedUtc,
+                    Interests = contactInterests.GetContactInterests(contactId)
                 };
+            }
+
         }
 
 
@@ -103,14 +105,17 @@ namespace IRL.Services
             {
                 var entity = GetContactFromDatabase(ctx, model.ContactId);
 
+                //var contactInterests = ContactInterestData;
+
                 if (entity == null) return false;
 
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
                 entity.Nickname = model.Nickname;
-                entity.Address = model.Address;
+                entity.Address = model.Address;  
                 entity.PhoneNumber = model.PhoneNumber;
                 entity.Notes = model.Notes;
+                //entity.Interests = model.ContactInterestData Interests;
 
                 return ctx.SaveChanges() == 1;
             }

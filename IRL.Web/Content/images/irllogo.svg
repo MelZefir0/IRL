@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="irllogo.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.959798"
+     inkscape:cx="136.61233"
+     inkscape:cy="963.6735"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="2000"
+     inkscape:window-height="1046"
+     inkscape:window-x="1081"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:pagecheckerboard="true" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="opacity:1;fill:#e8a33d;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.74058175;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 96.974609 165.40039 A 45.456863 45.709404 0 0 0 51.517578 211.10938 A 45.456863 45.709404 0 0 0 96.974609 256.81836 A 45.456863 45.709404 0 0 0 142.43164 211.10938 A 45.456863 45.709404 0 0 0 96.974609 165.40039 z M 105.97266 175.60352 L 111.09766 175.60352 L 111.09766 214.04102 C 111.09766 216.97852 112.23307 218.44727 114.50391 218.44727 C 115.42057 218.44727 116.24349 218.33268 116.97266 218.10352 L 116.97266 222.72852 C 116.57682 222.83268 116.04557 222.92643 115.37891 223.00977 C 114.73307 223.11393 114.04557 223.16602 113.31641 223.16602 C 112.29557 223.16602 111.33724 222.99935 110.44141 222.66602 C 109.54557 222.33268 108.76432 221.82227 108.09766 221.13477 C 107.45182 220.44727 106.93099 219.5931 106.53516 218.57227 C 106.16016 217.5306 105.97266 216.32227 105.97266 214.94727 L 105.97266 175.60352 z M 70.097656 176.19727 C 71.035156 176.19727 71.826823 176.52018 72.472656 177.16602 C 73.139323 177.79102 73.472656 178.58268 73.472656 179.54102 C 73.472656 180.45768 73.139323 181.23893 72.472656 181.88477 C 71.826823 182.5306 71.035156 182.85352 70.097656 182.85352 C 69.18099 182.85352 68.39974 182.54102 67.753906 181.91602 C 67.108073 181.29102 66.785156 180.49935 66.785156 179.54102 C 66.785156 178.58268 67.108073 177.79102 67.753906 177.16602 C 68.39974 176.52018 69.18099 176.19727 70.097656 176.19727 z M 97.691406 190.41602 C 99.02474 190.41602 100.04557 190.56185 100.75391 190.85352 L 100.75391 196.16602 C 99.858073 195.47852 98.566406 195.13477 96.878906 195.13477 C 94.691406 195.13477 92.858073 196.16602 91.378906 198.22852 C 89.920573 200.29102 89.191406 203.10352 89.191406 206.66602 L 89.191406 222.97852 L 84.066406 222.97852 L 84.066406 190.97852 L 89.191406 190.97852 L 89.191406 197.57227 L 89.316406 197.57227 C 90.045573 195.32227 91.160156 193.57227 92.660156 192.32227 C 94.160156 191.05143 95.83724 190.41602 97.691406 190.41602 z M 67.472656 190.97852 L 72.597656 190.97852 L 72.597656 214.04102 C 72.597656 216.97852 73.733073 218.44727 76.003906 218.44727 C 76.920573 218.44727 77.74349 218.33268 78.472656 218.10352 L 78.472656 222.72852 C 78.076823 222.83268 77.545573 222.92643 76.878906 223.00977 C 76.233073 223.11393 75.545573 223.16602 74.816406 223.16602 C 73.795573 223.16602 72.83724 222.99935 71.941406 222.66602 C 71.045573 222.33268 70.264323 221.82227 69.597656 221.13477 C 68.951823 220.44727 68.43099 219.5931 68.035156 218.57227 C 67.660156 217.5306 67.472656 216.32227 67.472656 214.94727 L 67.472656 190.97852 z "
+       transform="scale(0.26458333)"
+       id="path4584" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4586"
+       style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:192px;line-height:1.25;letter-spacing:0px;word-spacing:0px;"><flowRegion
+         id="flowRegion4588"
+         style="font-size:192px;"><rect
+           id="rect4590"
+           width="311.12698"
+           height="262.63965"
+           x="53.033009"
+           y="68.93058"
+           style="font-size:192px;" /></flowRegion><flowPara
+         id="flowPara4592" /></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4594"
+       style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:192px;line-height:1.25;letter-spacing:0px;word-spacing:0px;"><flowRegion
+         id="flowRegion4596"
+         style="font-size:192px;"><rect
+           id="rect4598"
+           width="296.47977"
+           height="241.42645"
+           x="45.456863"
+           y="77.516876"
+           style="font-size:192px;" /></flowRegion><flowPara
+         id="flowPara4600" /></flowRoot>  </g>
+</svg>

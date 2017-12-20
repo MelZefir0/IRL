@@ -13,7 +13,7 @@ namespace IRL.Services
     {
         private Guid _userId;
 
-        public ContactInterestService(Guid UserId)
+        public ContactInterestService(Guid UserId, int contactId)
         {
             _userId = UserId;
         }
@@ -48,23 +48,24 @@ namespace IRL.Services
             }
         }
 
-        public ContactInterestDetail GetContactInterestById(int interestId, string item)
+        public ICollection<ContactInterestModel> GetContactInterests(int contactId)
         {
-            Interest entity;
-
             using (var ctx = new ApplicationDbContext())
             {
-                entity = GetInterestsFromDatabase(ctx, interestId, item);
+                var contactInterests =
+                    ctx
+                        .ContactInterests
+                        .Where(i => i.ContactId == contactId)
+                        .Select(
+                            e =>
+                                new ContactInterestModel()
+                                {
+                                    InterestId = e.InterestId,
+                                    Item = e.Item,
+                                }
+                        );
+                return contactInterests.ToList();
             }
-
-            //if (entity == null) return new Interest();
-
-            return
-                new ContactInterestDetail
-                {
-                    InterestId = entity.InterestId,
-                    Item = entity.Item,
-                };
         }
 
 

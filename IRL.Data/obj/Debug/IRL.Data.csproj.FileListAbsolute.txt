@@ -33,3 +33,4 @@ C:\dev\IRL\IRL.Data\bin\Debug\IRL.Models.pdb
 C:\dev\IRL\IRL.Data\bin\Debug\IRL.Models.dll.config
 C:\dev\IRL\IRL.Data\obj\Debug\IRL.Data.Migrations._new.resources
 C:\dev\IRL\IRL.Data\obj\Debug\IRL.Data.csproj.GenerateResource.Cache
+C:\dev\IRL\IRL.Data\obj\Debug\IRL.Data.Migrations.FiddlingWithManytoMany.resources

@@ -60,6 +60,10 @@
     <Compile Include="Migrations\201712190433553_new.Designer.cs">
       <DependentUpon>201712190433553_new.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712201806099_FiddlingWithManytoMany.cs" />
+    <Compile Include="Migrations\201712201806099_FiddlingWithManytoMany.Designer.cs">
+      <DependentUpon>201712201806099_FiddlingWithManytoMany.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Suggestion.cs" />
     <Compile Include="UserInterest.cs" />
@@ -79,6 +83,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201712190433553_new.resx">
       <DependentUpon>201712190433553_new.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712201806099_FiddlingWithManytoMany.resx">
+      <DependentUpon>201712201806099_FiddlingWithManytoMany.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

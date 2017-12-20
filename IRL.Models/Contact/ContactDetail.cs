@@ -29,6 +29,6 @@ namespace IRL.Models
 
 
 
-        public virtual ICollection<InterestListItem> Interests { get; set; }
+        public virtual ICollection<ContactInterestModel> Interests { get; set; }
     }
 }

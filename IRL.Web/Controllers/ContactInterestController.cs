@@ -14,7 +14,9 @@ namespace IRL.Web.Controllers
        private ContactInterestService CreateInterestService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var svc = new ContactInterestService(userId);
+            var detail = new ContactDetail();
+            var contactId = detail.ContactId;
+            var svc = new ContactInterestService(userId, contactId);
 
             return svc;
         }
@@ -37,22 +39,5 @@ namespace IRL.Web.Controllers
             svc.AddInterest();
             return View(contactModel);
         }
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Select(ContactInterestModel contactModel)
-        //{
-        //    if (!ModelState.IsValid) return View(contactModel);
-            //    var service = CreateInterestService();
-
-        //    if (service.AddInterest(contactModel))
-        //    {
-        //        TempData["SaveResult"] = "Your interest preference has been stored";
-        //        return RedirectToAction("Index");
-        //    }
-            //    ModelState.AddModelError("", "An error occured. Please try again.");
-
-        //    return RedirectToAction("Index");
-        //}
     }
 }

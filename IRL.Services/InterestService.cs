@@ -59,18 +59,19 @@ namespace IRL.Services
             }
         }
 
-        public IEnumerable<UserInterestModel> GetUserInterests(int? id)
+        public ICollection<UserInterestModel> GetUserInterests(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
                         .UserInterests
-                        .Where(e => e.InterestId == id)
+                        .Where(e => e.UserId == _userId)
                         .Select(
                             e =>
                                 new UserInterestModel()
                                 {
+                                    UserId = _userId,
                                     InterestId = e.InterestId,
                                     Item = e.Item,
                                 }
@@ -79,7 +80,7 @@ namespace IRL.Services
             }
         }
 
-        public bool AddInterest(UserInterestModel model /*Interest item*/)
+        public bool AddInterest(UserInterestModel model)
         {
             //TODO: persist item from Interest 
             var entity =
@@ -87,7 +88,6 @@ namespace IRL.Services
                 {
                     UserId = _userId,
                     InterestId = model.InterestId,
-                    //Item = item.ToString()
                 };
             using (var ctx = new ApplicationDbContext())
             {

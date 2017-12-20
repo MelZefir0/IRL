@@ -30,7 +30,7 @@
                         @Html.DisplayFor(modelItem => item.Item)
                     </td>
                     <td>
-                        @Html.ActionLink("Add Interest", "Select", new { id = item.InterestId })
+                        @Html.ActionLink("Add Interest", "Select", new { interestId = item.InterestId })
                     </td>
                 </tr>
             }
@@ -39,31 +39,3 @@
     <div>
         @Html.ActionLink("Back", "Home")
     </div>
-
-
-    @*@section scripts {
-            <script language="javascript" type="text/javascript">
-                $(document).ready(function () {
-                    $("i[data-toggle='star']")
-                        .css({ "cursor": "pointer" })
-                        .click(function (e) {
-                            var target = $(e.target);
-                            var interestId = target.attr("data-id");
-                            var starSet = target.hasClass("glyphicon-star");
-
-                            $.ajax({
-                                method: starSet ? "DELETE" : "POST",
-                                url: "/api/interests/" + interestId + "/star",
-                                data: null
-                            })
-                                .done(function (r) {
-                                    target.removeClass();
-                                    target.addClass("glyphicon " + (starSet ? "glyphicon-star-empty" : "glyphicon-star"));
-                                })
-                                .fail(function (r) {
-                                    alert("Failed to change our stars");
-                                });
-                        });
-                });
-            </script>
-        }*@

@@ -58,7 +58,6 @@
     <Compile Include="InterestService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SuggestionService.cs" />
-    <Compile Include="UserInterestService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

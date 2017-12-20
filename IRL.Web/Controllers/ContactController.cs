@@ -1,9 +1,11 @@
-﻿using IRL.Models;
+﻿using IRL.Data;
+using IRL.Models;
 using IRL.Services;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -69,17 +71,18 @@ namespace IRL.Web.Controllers
         public ActionResult Edit(int id)
         {
             var service = CreateContactService();
-            var detail = service.GetContactById(id);
+            var contact = service.GetContactById(id);
             var model =
                 new ContactEdit
                 {
-                    ContactId = detail.ContactId,
-                    FirstName = detail.FirstName,
-                    LastName = detail.LastName,
-                    Nickname = detail.Nickname,
-                    Address = detail.Address,
-                    PhoneNumber = detail.PhoneNumber,
-                    Notes = detail.Notes
+                    ContactId = contact.ContactId,
+                    FirstName = contact.FirstName,
+                    LastName = contact.LastName,
+                    Nickname = contact.Nickname,
+                    Address = contact.Address,
+                    PhoneNumber = contact.PhoneNumber,
+                    Notes = contact.Notes,
+                    //Interests = 
                 };
             return View(model);
         }
@@ -108,12 +111,13 @@ namespace IRL.Web.Controllers
             return View(model);
         }
 
-       public ActionResult Details(int id)
+        public ActionResult Details(int id)
        {
-           var model = CreateContactService().GetContactById(id);
+            var service = CreateContactService();
+            var model = service.GetContactById(id);
 
-           return View(model);
-       }
+            return View(model);
+        }
 
         [ActionName("Delete")]
         public ActionResult Delete(int id)

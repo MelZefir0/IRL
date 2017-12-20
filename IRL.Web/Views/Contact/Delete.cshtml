@@ -7,74 +7,7 @@
 <h2>Delete</h2>
 
 <h3>Are you sure you want to delete @Html.DisplayFor(model => model.FullName)?</h3>
-@*<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ContactId)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ContactId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Nickname)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nickname)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PhoneNumber)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Notes)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Notes)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CreatedUtc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CreatedUtc)
-        </dd>
-
-    </dl>*@
 <div>
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
