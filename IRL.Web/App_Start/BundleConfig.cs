@@ -23,9 +23,14 @@ namespace IRL.Web
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/Content/components").Include(
+                      "~/Content/src/components/Sidebar/Sidebar.jsx"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-united.css",
                       "~/Content/site.css"));
+
+            
         }
     }
 }

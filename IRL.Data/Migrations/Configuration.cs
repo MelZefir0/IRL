@@ -10,6 +10,7 @@ namespace IRL.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "IRL.Data.ApplicationDbContext";
         }
 
         protected override void Seed(IRL.Data.ApplicationDbContext context)

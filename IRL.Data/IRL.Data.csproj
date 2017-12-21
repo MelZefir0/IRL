@@ -42,6 +42,9 @@
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -56,13 +59,13 @@
     <Compile Include="Contact.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="ContactInterest.cs" />
-    <Compile Include="Migrations\201712190433553_new.cs" />
-    <Compile Include="Migrations\201712190433553_new.Designer.cs">
-      <DependentUpon>201712190433553_new.cs</DependentUpon>
+    <Compile Include="Migrations\201712202141256_InitialCreate.cs" />
+    <Compile Include="Migrations\201712202141256_InitialCreate.Designer.cs">
+      <DependentUpon>201712202141256_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712201806099_FiddlingWithManytoMany.cs" />
-    <Compile Include="Migrations\201712201806099_FiddlingWithManytoMany.Designer.cs">
-      <DependentUpon>201712201806099_FiddlingWithManytoMany.cs</DependentUpon>
+    <Compile Include="Migrations\201712210628223_ReplacingLostTables.cs" />
+    <Compile Include="Migrations\201712210628223_ReplacingLostTables.Designer.cs">
+      <DependentUpon>201712210628223_ReplacingLostTables.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Suggestion.cs" />
@@ -81,11 +84,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712190433553_new.resx">
-      <DependentUpon>201712190433553_new.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712202141256_InitialCreate.resx">
+      <DependentUpon>201712202141256_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712201806099_FiddlingWithManytoMany.resx">
-      <DependentUpon>201712201806099_FiddlingWithManytoMany.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712210628223_ReplacingLostTables.resx">
+      <DependentUpon>201712210628223_ReplacingLostTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

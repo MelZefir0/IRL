@@ -1,8 +1,8 @@
 ﻿@model IRL.Models.UserInterestModel
 
-<p>
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
+</p>*@
 <table class="table">
         <tr>
             <th>
@@ -10,9 +10,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.InterestId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Item)
             </th>
         </tr>
 
@@ -22,9 +19,6 @@
             </td>
             <td>
                 @Html.DisplayFor(model=> model.InterestId)
-            </td>
-            <td>
-                @Html.DisplayFor(model => model.Item)
             </td>
         </tr>
     

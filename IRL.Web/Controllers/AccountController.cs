@@ -13,13 +13,11 @@ using IRL.Data;
 
 namespace IRL.Web.Controllers
 {
-    //Adding SSL
-    [RequireHttps]
-#if !DEBUG
-    [RequireHttps]
-#endif
-
-    [Authorize]
+//    [RequireHttps]
+//#if !DEBUG
+//[RequireHttps]
+//#endif
+    //[Authorize]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;

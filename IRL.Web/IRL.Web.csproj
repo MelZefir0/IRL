@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -26,6 +27,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,11 +51,29 @@
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="ClearScript, Version=5.4.9.0, Culture=neutral, PublicKeyToken=935d0c957da47c73, processorArchitecture=MSIL">
+      <HintPath>..\packages\JavaScriptEngineSwitcher.V8.2.4.2\lib\net45\ClearScript.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="JavaScriptEngineSwitcher.ChakraCore, Version=2.4.8.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
+      <HintPath>..\packages\JavaScriptEngineSwitcher.ChakraCore.2.4.8\lib\net45\JavaScriptEngineSwitcher.ChakraCore.dll</HintPath>
+    </Reference>
+    <Reference Include="JavaScriptEngineSwitcher.Core, Version=2.4.9.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
+      <HintPath>..\packages\JavaScriptEngineSwitcher.Core.2.4.9\lib\net45\JavaScriptEngineSwitcher.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="JavaScriptEngineSwitcher.Msie, Version=2.4.9.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
+      <HintPath>..\packages\JavaScriptEngineSwitcher.Msie.2.4.9\lib\net45\JavaScriptEngineSwitcher.Msie.dll</HintPath>
+    </Reference>
+    <Reference Include="JavaScriptEngineSwitcher.V8, Version=2.4.2.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
+      <HintPath>..\packages\JavaScriptEngineSwitcher.V8.2.4.2\lib\net45\JavaScriptEngineSwitcher.V8.dll</HintPath>
+    </Reference>
+    <Reference Include="JSPool, Version=3.0.1.0, Culture=neutral, PublicKeyToken=2fc7775f73072640, processorArchitecture=MSIL">
+      <HintPath>..\packages\JSPool.3.0.1\lib\net451\JSPool.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
@@ -145,6 +165,9 @@
     <Reference Include="Microsoft.AspNetCore.Mvc.Formatters.Json, Version=2.0.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNetCore.Mvc.Formatters.Json.2.0.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Formatters.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.ViewFeatures, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.ViewFeatures.2.0.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.ViewFeatures.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNetCore.ResponseCaching.Abstractions, Version=2.0.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNetCore.ResponseCaching.Abstractions.2.0.1\lib\netstandard2.0\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll</HintPath>
     </Reference>
@@ -153,6 +176,9 @@
     </Reference>
     <Reference Include="Microsoft.AspNetCore.Routing.Abstractions, Version=2.0.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNetCore.Routing.Abstractions.2.0.1\lib\netstandard2.0\Microsoft.AspNetCore.Routing.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.StaticFiles, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.StaticFiles.2.0.0\lib\netstandard2.0\Microsoft.AspNetCore.StaticFiles.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNetCore.WebUtilities, Version=2.0.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNetCore.WebUtilities.2.0.1\lib\netstandard2.0\Microsoft.AspNetCore.WebUtilities.dll</HintPath>
@@ -164,8 +190,14 @@
     <Reference Include="Microsoft.DotNet.PlatformAbstractions, Version=2.0.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.DotNet.PlatformAbstractions.2.0.4\lib\net45\Microsoft.DotNet.PlatformAbstractions.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.2.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
@@ -175,6 +207,12 @@
     </Reference>
     <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.FileProviders.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Physical, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Physical.2.0.0\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Physical.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileSystemGlobbing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileSystemGlobbing.2.0.0\lib\netstandard2.0\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.Hosting.Abstractions, Version=2.0.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Hosting.Abstractions.2.0.1\lib\netstandard2.0\Microsoft.Extensions.Hosting.Abstractions.dll</HintPath>
@@ -233,11 +271,26 @@
     <Reference Include="Microsoft.Win32.Registry, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Win32.Registry.4.4.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
     </Reference>
+    <Reference Include="MsieJavaScriptEngine, Version=2.2.2.0, Culture=neutral, PublicKeyToken=a3a2846a37ac0d3e, processorArchitecture=MSIL">
+      <HintPath>..\packages\MsieJavaScriptEngine.2.2.2\lib\net45\MsieJavaScriptEngine.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json.Bson, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.Bson.1.0.1\lib\net45\Newtonsoft.Json.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="React.AspNet, Version=3.2.0.0, Culture=neutral, PublicKeyToken=9aed67b161f7db78, processorArchitecture=MSIL">
+      <HintPath>..\packages\React.AspNet.3.2.0\lib\netstandard2.0\React.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="React.AspNet.Middleware, Version=3.2.0.0, Culture=neutral, PublicKeyToken=9aed67b161f7db78, processorArchitecture=MSIL">
+      <HintPath>..\packages\React.AspNet.Middleware.3.2.0\lib\netstandard2.0\React.AspNet.Middleware.dll</HintPath>
+    </Reference>
+    <Reference Include="React.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=9aed67b161f7db78, processorArchitecture=MSIL">
+      <HintPath>..\packages\React.Core.3.2.0\lib\net40\React.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="React.Web, Version=3.2.0.0, Culture=neutral, PublicKeyToken=9aed67b161f7db78, processorArchitecture=MSIL">
+      <HintPath>..\packages\React.Web.3.2.0\lib\net40\React.Web.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -254,6 +307,7 @@
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.4.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
@@ -326,6 +380,12 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="VroomJs, Version=1.2.3.0, Culture=neutral, PublicKeyToken=e7c52e67fcb0044f, processorArchitecture=MSIL">
+      <HintPath>..\packages\VroomJs.1.2.3\lib\net45\VroomJs.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
     </Reference>
@@ -345,6 +405,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\ReactConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -363,18 +424,80 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-flatly.css" />
+    <Content Include="Content\bootstrap-united.css" />
+    <Content Include="Content\Script\bootstrap.js" />
+    <Content Include="Content\Script\bootstrap.min.js" />
+    <Content Include="Content\Script\contact.js" />
+    <Content Include="Content\Script\jquery.js" />
+    <Content Include="Content\Script\jquery.smartmenus.bootstrap.js" />
+    <Content Include="Content\Script\jquery.smartmenus.js" />
+    <Content Include="Content\Script\tutorial.js" />
+    <Content Include="Content\Script\wow.min.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\images\black-and-white-branches-tree-high.jpg" />
+    <Content Include="Content\images\trees.jpg" />
     <Content Include="Content\images\parrot.jpg" />
     <Content Include="Content\images\irllogo.svg" />
     <Content Include="Content\images\irllogowhite.svg" />
-    <Content Include="Content\owl.carousel.js" />
+    <Content Include="Content\Script\owl.carousel.js" />
     <Content Include="Content\owl.theme.css" />
     <Content Include="Content\owl.transitions.css" />
+    <Content Include="Content\light-bootstrap-dashboard.css" />
+    <Content Include="Content\src\assets\css\animate.min.css" />
+    <Content Include="Content\src\assets\css\bootstrap.min.css" />
+    <Content Include="Content\src\assets\css\demo.css" />
+    <Content Include="Content\src\assets\css\pe-icon-7-stroke.css" />
+    <Content Include="Content\src\assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\src\assets\fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="Content\src\assets\img\default-avatar.png" />
+    <Content Include="Content\src\assets\img\faces\face-0.jpg" />
+    <Content Include="Content\src\assets\img\faces\face-1.jpg" />
+    <Content Include="Content\src\assets\img\faces\face-2.jpg" />
+    <Content Include="Content\src\assets\img\faces\face-3.jpg" />
+    <Content Include="Content\src\assets\img\faces\face-4.jpg" />
+    <Content Include="Content\src\assets\img\faces\face-5.jpg" />
+    <Content Include="Content\src\assets\img\faces\face-6.jpg" />
+    <Content Include="Content\src\assets\img\faces\face-7.jpg" />
+    <Content Include="Content\src\assets\img\faces\tim_vector.jpe" />
+    <Content Include="Content\src\assets\img\loading-bubbles.svg" />
+    <Content Include="Content\src\assets\img\mask.png" />
+    <Content Include="Content\src\assets\img\new_logo.png" />
+    <Content Include="Content\src\assets\img\reactlogo.png" />
+    <Content Include="Content\src\assets\img\sidebar-1.jpg" />
+    <Content Include="Content\src\assets\img\sidebar-2.jpg" />
+    <Content Include="Content\src\assets\img\sidebar-3.jpg" />
+    <Content Include="Content\src\assets\img\sidebar-4.jpg" />
+    <Content Include="Content\src\assets\img\sidebar-5.jpg" />
+    <Content Include="Content\src\assets\img\tim_80x80.png" />
+    <Content Include="Content\src\assets\sass\light-bootstrap-dashboard.css" />
+    <Content Include="Content\src\components\Card\Card.jsx" />
+    <Content Include="Content\src\components\Footer\Footer.jsx" />
+    <Content Include="Content\src\components\FormInputs\FormInputs.jsx" />
+    <Content Include="Content\src\components\Header\Header.jsx" />
+    <Content Include="Content\src\components\Header\HeaderLinks.jsx" />
+    <Content Include="Content\src\components\Sidebar\Sidebar.jsx" />
+    <Content Include="Content\src\components\StatsCard\StatsCard.jsx" />
+    <Content Include="Content\src\components\Tasks\Tasks.jsx" />
+    <Content Include="Content\src\components\UserCard\UserCard.jsx" />
+    <Content Include="Content\src\containers\App\App.jsx" />
+    <Content Include="Content\src\elements\CustomButton\CustomButton.jsx" />
+    <Content Include="Content\src\elements\CustomCheckbox\CustomCheckbox.jsx" />
+    <Content Include="Content\src\elements\CustomRadio\CustomRadio.jsx" />
+    <Content Include="Content\src\index.js" />
+    <Content Include="Content\src\logo.svg" />
+    <Content Include="Content\src\registerServiceWorker.js" />
+    <Content Include="Content\src\routes\app.jsx" />
+    <Content Include="Content\src\variables\Variables.jsx" />
+    <Content Include="Content\src\views\Dashboard\Dashboard.jsx" />
+    <Content Include="Content\src\views\Icons\Icons.jsx" />
+    <Content Include="Content\src\views\Maps\Maps.jsx" />
+    <Content Include="Content\src\views\Notifications\Notifications.jsx" />
+    <Content Include="Content\src\views\TableList\TableList.jsx" />
+    <Content Include="Content\src\views\Typography\Typography.jsx" />
+    <Content Include="Content\src\views\Upgrade\Upgrade.jsx" />
+    <Content Include="Content\src\views\UserProfile\UserProfile.jsx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -390,6 +513,44 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\src\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\src\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\src\assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\src\assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\src\assets\fonts\Pe-icon-7-stroke.eot" />
+    <Content Include="Content\src\assets\fonts\Pe-icon-7-stroke.ttf" />
+    <Content Include="Content\src\assets\fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="Content\src\assets\sass\lbd\mixins\_buttons.scss" />
+    <Content Include="Content\src\assets\sass\lbd\mixins\_cards.scss" />
+    <Content Include="Content\src\assets\sass\lbd\mixins\_chartist.scss" />
+    <Content Include="Content\src\assets\sass\lbd\mixins\_icons.scss" />
+    <Content Include="Content\src\assets\sass\lbd\mixins\_inputs.scss" />
+    <Content Include="Content\src\assets\sass\lbd\mixins\_labels.scss" />
+    <Content Include="Content\src\assets\sass\lbd\mixins\_morphing-buttons.scss" />
+    <Content Include="Content\src\assets\sass\lbd\mixins\_navbars.scss" />
+    <Content Include="Content\src\assets\sass\lbd\mixins\_social-buttons.scss" />
+    <Content Include="Content\src\assets\sass\lbd\mixins\_tabs.scss" />
+    <Content Include="Content\src\assets\sass\lbd\mixins\_transparency.scss" />
+    <Content Include="Content\src\assets\sass\lbd\mixins\_vendor-prefixes.scss" />
+    <Content Include="Content\src\assets\sass\lbd\_alerts.scss" />
+    <Content Include="Content\src\assets\sass\lbd\_buttons.scss" />
+    <Content Include="Content\src\assets\sass\lbd\_cards.scss" />
+    <Content Include="Content\src\assets\sass\lbd\_chartist.scss" />
+    <Content Include="Content\src\assets\sass\lbd\_checkbox-radio-switch.scss" />
+    <Content Include="Content\src\assets\sass\lbd\_dropdown.scss" />
+    <Content Include="Content\src\assets\sass\lbd\_footers.scss" />
+    <Content Include="Content\src\assets\sass\lbd\_inputs.scss" />
+    <Content Include="Content\src\assets\sass\lbd\_misc.scss" />
+    <Content Include="Content\src\assets\sass\lbd\_mixins.scss" />
+    <Content Include="Content\src\assets\sass\lbd\_navbars.scss" />
+    <Content Include="Content\src\assets\sass\lbd\_responsive.scss" />
+    <Content Include="Content\src\assets\sass\lbd\_sidebar-and-main-panel.scss" />
+    <Content Include="Content\src\assets\sass\lbd\_tables.scss" />
+    <Content Include="Content\src\assets\sass\lbd\_typography.scss" />
+    <Content Include="Content\src\assets\sass\lbd\_variables.scss" />
+    <Content Include="Content\src\assets\sass\light-bootstrap-dashboard.scss" />
+    <Content Include="Content\package.json" />
+    <Content Include="Content\package-lock.json" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap-ak.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -404,6 +565,14 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\react\react-dom-server.js" />
+    <Content Include="Scripts\react\react-dom-server.min.js" />
+    <Content Include="Scripts\react\react-dom.js" />
+    <Content Include="Scripts\react\react-dom.min.js" />
+    <Content Include="Scripts\react\react-with-addons.js" />
+    <Content Include="Scripts\react\react-with-addons.min.js" />
+    <Content Include="Scripts\react\react.js" />
+    <Content Include="Scripts\react\react.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
@@ -478,11 +647,15 @@
       <Name>IRL.Services</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
