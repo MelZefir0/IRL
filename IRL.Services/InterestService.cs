@@ -11,14 +11,24 @@ namespace IRL.Services
 {
     public class InterestService /*: /*IInterestService*/
     {
-        private Guid _userId;
+        private readonly Guid _userId;
+        private readonly int _contactId;
 
         public InterestService(Guid UserId)
         {
             _userId = UserId;
         }
 
-        private Interest GetInterestsFromDatabase(ApplicationDbContext context, int interestId, string item)
+        public InterestService()
+        {
+        }
+
+        public InterestService(int contactId)
+        {
+            _contactId = contactId;
+        }
+
+        private Data.Interest GetInterestsFromDatabase(ApplicationDbContext context, int interestId, string item)
         {
             return
                 context
@@ -55,7 +65,7 @@ namespace IRL.Services
                                     Item = e.Item,
                                 }
                         );
-                return query.ToArray();
+                return query.ToList();
             }
         }
 
@@ -73,10 +83,28 @@ namespace IRL.Services
                                 {
                                     UserId = _userId,
                                     InterestId = e.InterestId,
-                                    Item = e.Item,
                                 }
                         );
-                return query.ToArray();
+                return query.ToList();
+            }
+        }
+
+        public ICollection<ContactInterest> GetContactInterests(int contactId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var contactInterests =
+                    ctx
+                        .ContactInterests
+                        .Where(i => i.ContactId == contactId)
+                        .Select(
+                            e =>
+                                new ContactInterest()
+                                {
+                                    InterestId = e.InterestId,
+                                }
+                        );
+                return contactInterests.ToList();
             }
         }
 

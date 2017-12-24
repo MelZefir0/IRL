@@ -1,6 +1,7 @@
 ﻿using IRL.Data;
 using IRL.Models;
 using IRL.Services;
+using IRL.Web.Models;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,7 @@ namespace IRL.Web.Controllers
         //}
 
         // GET: Contact
+        private Guid _userId;
 
         private ContactService CreateContactService()
         {
@@ -72,6 +74,8 @@ namespace IRL.Web.Controllers
         {
             var service = CreateContactService();
             var contact = service.GetContactById(id);
+
+            PopulateContactInterestData(contact);
             var model =
                 new ContactEdit
                 {
@@ -82,14 +86,31 @@ namespace IRL.Web.Controllers
                     Address = contact.Address,
                     PhoneNumber = contact.PhoneNumber,
                     Notes = contact.Notes,
-                    //Interests = 
                 };
             return View(model);
         }
 
+        private void PopulateContactInterestData(ContactDetail contact)
+        {
+            var interestSvc = new InterestService();
+            var allInterests = interestSvc.GetInterests();
+            var contactInterests = new HashSet<int>(contact.Interests.Select(i => i.InterestId));
+            var viewModel = new List<ContactInterestData>();
+            foreach (var interest in allInterests)
+            {
+                viewModel.Add(new ContactInterestData
+                {
+                    InterestId = interest.InterestId,
+                    Interest = interest.Item,
+                    Chosen = contactInterests.Contains(interest.InterestId)
+                });
+            }
+            ViewBag.Courses = viewModel;
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, ContactEdit model)
+        public ActionResult Edit(int? id, ContactEdit model, string[] chosenInterests)
         {
             if (!ModelState.IsValid) return View(model);
 
@@ -112,7 +133,7 @@ namespace IRL.Web.Controllers
         }
 
         public ActionResult Details(int id)
-       {
+        {
             var service = CreateContactService();
             var model = service.GetContactById(id);
 

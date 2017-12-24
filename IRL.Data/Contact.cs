@@ -27,9 +27,11 @@ namespace IRL.Data
 
         public string Notes { get; set; }
 
+        public bool HasTalked { get; set; }
+
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
 
-        public virtual ICollection<ContactInterest> Interests { get; set; }
+        public virtual ICollection<Interest> Interests { get; set; }
     }
 }

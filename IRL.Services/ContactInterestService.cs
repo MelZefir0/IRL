@@ -18,16 +18,16 @@ namespace IRL.Services
             _userId = UserId;
         }
 
-        private Interest GetInterestsFromDatabase(ApplicationDbContext context, int interestId, string item)
-        {
-            return
-                context
-                    .Interests
-                    .SingleOrDefault(
-                           e =>
-                           e.InterestId == interestId &&
-                           e.Item == item);
-        }
+        //private Interest GetInterestsFromDatabase(ApplicationDbContext context, int interestId, string item)
+        //{
+        //    return
+        //        context
+        //            .Interests
+        //            .SingleOrDefault(
+        //                   e =>
+        //                   e.InterestId == interestId &&
+        //                   e.Item == item);
+        //}
 
         public ICollection<InterestListItem> GetInterests()
         {
@@ -48,7 +48,7 @@ namespace IRL.Services
             }
         }
 
-        public ICollection<ContactInterestModel> GetContactInterests(int contactId)
+        public ICollection<Models.Interest> GetContactInterests(int contactId)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -58,10 +58,9 @@ namespace IRL.Services
                         .Where(i => i.ContactId == contactId)
                         .Select(
                             e =>
-                                new ContactInterestModel()
+                                new Models.Interest()
                                 {
                                     InterestId = e.InterestId,
-                                    Item = e.Item,
                                 }
                         );
                 return contactInterests.ToList();
@@ -72,7 +71,7 @@ namespace IRL.Services
         public bool AddInterest()
         {
             //TODO: persist item from Interest 
-            var model = new ContactInterestModel();
+            var model = new Models.Interest();
             var entity =
                 new ContactInterest()
                 {

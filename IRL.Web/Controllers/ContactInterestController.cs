@@ -31,7 +31,7 @@ namespace IRL.Web.Controllers
         [ActionName("Select")]
         public ActionResult Select(int interestId, int contactId)
         {
-            var contactModel = new ContactInterestModel();
+            var contactModel = new Interest();
             var contact = new ContactDetail();
             contact.ContactId = contactId;
             var svc = CreateInterestService();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IRL.Models
 {
-    public class ContactInterestModel
+    public class Interest
     {
         public int Id { get; set; }
 

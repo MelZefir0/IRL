@@ -12,14 +12,13 @@ namespace IRL.Data
         [Key]
         public int Id { get; set; }
 
-        public Guid UserId { get; set; }
+        //public Guid UserId { get; set; }
 
         public int ContactId { get; set; }
 
         public int InterestId { get; set; }
 
-        public string Item { get; set; }
-
-        public virtual ICollection<Interest> Interests { get; set; }
+        public virtual Interest Interest { get; set; }
+        public virtual Contact Contact { get; set; }
     }
 }    

@@ -10,6 +10,7 @@ namespace IRL.Data
 {
     public class Suggestion
     {
+        [Key]
         public int Id { get; set; }
 
         public int InterestId { get; set; }

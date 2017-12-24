@@ -67,6 +67,10 @@
     <Compile Include="Migrations\201712210628223_ReplacingLostTables.Designer.cs">
       <DependentUpon>201712210628223_ReplacingLostTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712232220163_Edit.cs" />
+    <Compile Include="Migrations\201712232220163_Edit.Designer.cs">
+      <DependentUpon>201712232220163_Edit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Suggestion.cs" />
     <Compile Include="UserInterest.cs" />
@@ -89,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712210628223_ReplacingLostTables.resx">
       <DependentUpon>201712210628223_ReplacingLostTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712232220163_Edit.resx">
+      <DependentUpon>201712232220163_Edit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

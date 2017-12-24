@@ -14,5 +14,8 @@ namespace IRL.Data
 
             [Required]
             public string Item { get; set; }
+
+            public virtual ICollection<Contact> Contacts { get; set; }
+            public virtual ICollection<ApplicationUser> Users { get; set; }
     }
 }

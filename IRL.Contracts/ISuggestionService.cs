@@ -9,7 +9,7 @@ namespace IRL.Contracts
 {
     public interface ISuggestionService
     {
-        IEnumerable<ContactInterestModel> GetContactInterests();
+        IEnumerable<Interest> GetContactInterests();
         IEnumerable<UserInterestModel> GetUserInterests();
         bool GiveSuggestion(int contIntId, int userIntId);
     }

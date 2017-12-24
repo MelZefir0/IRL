@@ -10,7 +10,7 @@ namespace IRL.Services
 {
     public class SuggestionService : ISuggestionService
     {
-        public IEnumerable<ContactInterestModel> GetContactInterests()
+        public IEnumerable<Interest> GetContactInterests()
         {
             throw new NotImplementedException();
         }

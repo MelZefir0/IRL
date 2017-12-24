@@ -78,8 +78,7 @@ namespace IRL.Services
                         .Contacts
                         .SingleOrDefault(e => e.ContactId == contactId);
 
-
-                var contactInterests = new ContactInterestService(_userId, contactId);
+                var contactInterests = new InterestService(contactId);
 
             return
                 new ContactDetail
@@ -92,7 +91,7 @@ namespace IRL.Services
                     PhoneNumber = contact.PhoneNumber,
                     Notes = contact.Notes,
                     CreatedUtc = contact.CreatedUtc,
-                    Interests = contactInterests.GetContactInterests(contactId)
+                    //Interests = contactInterests.GetContactInterests(contactId)
                 };
             }
 
@@ -103,9 +102,10 @@ namespace IRL.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
+                //var interests = new InterestService();
+                var contactInterests = new HashSet<int>(model.Interests.Select(c => c.InterestId));
+                //var contactInterests = interests.GetContactInterests(model.ContactId);
                 var entity = GetContactFromDatabase(ctx, model.ContactId);
-
-                //var contactInterests = ContactInterestData;
 
                 if (entity == null) return false;
 
@@ -115,7 +115,7 @@ namespace IRL.Services
                 entity.Address = model.Address;  
                 entity.PhoneNumber = model.PhoneNumber;
                 entity.Notes = model.Notes;
-                //entity.Interests = model.ContactInterestData Interests;
+                //entity.Interests = contactInterests;
 
                 return ctx.SaveChanges() == 1;
             }

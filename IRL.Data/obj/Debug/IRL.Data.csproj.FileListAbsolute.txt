@@ -57,3 +57,4 @@ C:\Users\wande\Desktop\IRL\IRL.Data\bin\Debug\Newtonsoft.Json.xml
 C:\Users\wande\Desktop\IRL\IRL.Data\obj\Debug\IRL.Data.Migrations.InitialCreate.resources
 C:\Users\wande\Desktop\IRL\IRL.Data\obj\Debug\IRL.Data.csproj.GenerateResource.Cache
 C:\Users\wande\Desktop\IRL\IRL.Data\obj\Debug\IRL.Data.Migrations.ReplacingLostTables.resources
+C:\Users\wande\Desktop\IRL\IRL.Data\obj\Debug\IRL.Data.Migrations.Edit.resources
