@@ -56,25 +56,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contact.cs" />
+    <Compile Include="ContactEntity.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="ContactInterest.cs" />
-    <Compile Include="Migrations\201712202141256_InitialCreate.cs" />
-    <Compile Include="Migrations\201712202141256_InitialCreate.Designer.cs">
-      <DependentUpon>201712202141256_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712210628223_ReplacingLostTables.cs" />
-    <Compile Include="Migrations\201712210628223_ReplacingLostTables.Designer.cs">
-      <DependentUpon>201712210628223_ReplacingLostTables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712232220163_Edit.cs" />
-    <Compile Include="Migrations\201712232220163_Edit.Designer.cs">
-      <DependentUpon>201712232220163_Edit.cs</DependentUpon>
+    <Compile Include="ContactInterestEntity.cs" />
+    <Compile Include="Migrations\201712282346018_Refactor.cs" />
+    <Compile Include="Migrations\201712282346018_Refactor.Designer.cs">
+      <DependentUpon>201712282346018_Refactor.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Suggestion.cs" />
-    <Compile Include="UserInterest.cs" />
-    <Compile Include="Interest.cs" />
+    <Compile Include="UserInterestEntity.cs" />
+    <Compile Include="InterestEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -88,14 +80,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712202141256_InitialCreate.resx">
-      <DependentUpon>201712202141256_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712210628223_ReplacingLostTables.resx">
-      <DependentUpon>201712210628223_ReplacingLostTables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712232220163_Edit.resx">
-      <DependentUpon>201712232220163_Edit.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712282346018_Refactor.resx">
+      <DependentUpon>201712282346018_Refactor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

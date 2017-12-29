@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace IRL.Data
 {
-    public class ContactInterest
+    public class ContactInterestEntity
     {
         [Key]
         public int Id { get; set; }
@@ -18,7 +18,7 @@ namespace IRL.Data
 
         public int InterestId { get; set; }
 
-        public virtual Interest Interest { get; set; }
-        public virtual Contact Contact { get; set; }
+        public virtual InterestEntity Interest { get; set; }
+        public virtual ContactEntity Contact { get; set; }
     }
 }    

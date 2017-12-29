@@ -11,6 +11,6 @@ namespace IRL.Contracts
     public interface IInterestService
     {
         ICollection<InterestListItem> GetInterests();
-        Data.Interest GetInterestById(int id);
+        InterestEntity GetInterestById(int id);
     }
 }

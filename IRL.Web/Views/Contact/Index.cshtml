@@ -23,7 +23,7 @@
 <table class="table">
     <tr>
         <th>
-        @Html.DisplayNameFor(model => model.ContactId)
+            @Html.DisplayNameFor(model => model.ContactId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.FirstName)
@@ -31,26 +31,59 @@
         <th>
             @Html.DisplayNameFor(model => model.CreatedUTC)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HasTalked)
+        </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ContactId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedUTC)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ContactId }) |
-            @Html.ActionLink("Details", "Details", new {id=item.ContactId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ContactId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedUTC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasTalked, new { contactId = item.ContactId })
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ContactId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ContactId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ContactId })
+            </td>
+        </tr>
+    }
 
 </table>
+@section scripts {
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function () {
+            $("i[data-toggle='star']")
+                .css({ "cursor": "pointer" })
+                .click(function (e) {
+                    var target = $(e.target);
+                    var contactId = target.attr("data-contactid");
+                    var starSet = target.hasClass("glyphicon-star");
+
+                    $.ajax({
+                        method: starSet ? "DELETE" : "PUT",
+                        url: "/api/contacts/" + contactId + "/star",
+                        data: null
+                    })
+                    .done(function (r) {
+                        target.removeClass();
+                        target.addClass("glyphicon " + (starSet ? "glyphicon-star-empty" : "glyphicon-star"));
+                    })
+                    .fail(function (r) {
+                        alert("Failed to change star status");
+                    });
+                });
+        });
+    </script>
+}

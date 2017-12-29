@@ -20,5 +20,10 @@ namespace IRL.Models
         public DateTimeOffset CreatedUTC { get; set; }
 
         public override string ToString() => FirstName;
+
+        [UIHint("Talked")]
+        public bool HasTalked { get; set; }
+
+        public virtual ICollection<InterestListItem> Interests { get; set; }
     }
 }

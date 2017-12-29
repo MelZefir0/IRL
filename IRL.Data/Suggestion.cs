@@ -17,6 +17,6 @@ namespace IRL.Data
 
         public string SuggestionItem { get; set; }
 
-        public virtual ICollection<Interest> Interests { get; set; }
+        public virtual ICollection<InterestEntity> Interests { get; set; }
     }
 }

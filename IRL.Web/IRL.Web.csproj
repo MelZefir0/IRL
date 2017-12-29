@@ -414,6 +414,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InterestController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\WebAPI\ContactsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -619,10 +620,12 @@
     <Content Include="Views\Interest\Index.cshtml" />
     <Content Include="Views\Interest\Select.cshtml" />
     <Content Include="Views\Contact\_ContIntCreate.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\HasTalked.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\ContactInterest\" />
+    <Folder Include="Views\Contacts\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

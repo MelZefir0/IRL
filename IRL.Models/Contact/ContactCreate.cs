@@ -27,8 +27,6 @@ namespace IRL.Models
         [MaxLength(8000)]
         public string Notes { get; set; }
 
-
-
-        public virtual ICollection<Interest> Interests { get; set; }
+        public virtual ICollection<InterestListItem> Interests { get; set; }
     }
 }

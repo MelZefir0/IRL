@@ -25,14 +25,19 @@
             @Html.AntiForgeryToken()
             foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Item)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Add Interest", "Select", new { interestId = item.InterestId })
-                    </td>
-                </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Item)
+        </td>
+
+        @*<td>
+            @Html.ActionLink("Add Interest", "Select", new { interestId = item.InterestId })
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.Chosen, new { Id = item.InterestId })
+        </td>
+
+    </tr>
             }
         }
     </table>

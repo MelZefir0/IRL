@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace IRL.Data
 {
-    public class Interest
+    public class InterestEntity
     {
             [Key]
             public int InterestId { get; set; }
@@ -15,7 +15,7 @@ namespace IRL.Data
             [Required]
             public string Item { get; set; }
 
-            public virtual ICollection<Contact> Contacts { get; set; }
-            public virtual ICollection<ApplicationUser> Users { get; set; }
+            //public virtual ICollection<Contact> Contacts { get; set; }
+            //public virtual ICollection<ApplicationUser> Users { get; set; }
     }
 }

@@ -1,13 +1,17 @@
-﻿using System;
+﻿using IRL.Models;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace IRL.Data
 {
-    public class Contact
+    [Table("Contact")]
+    public class ContactEntity
     {
         [Key]
         public int ContactId { get; set; }
@@ -27,11 +31,12 @@ namespace IRL.Data
 
         public string Notes { get; set; }
 
+        [DefaultValue(false)]
         public bool HasTalked { get; set; }
 
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
 
-        public virtual ICollection<Interest> Interests { get; set; }
+        public virtual ICollection<InterestListItem> Interests { get; set; }
     }
 }

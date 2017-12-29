@@ -6,7 +6,6 @@
     <title>@ViewBag.Title - IRL</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/bootstrap")
 </head>
 <body>
     <div class="navbar-main">
@@ -18,19 +17,19 @@
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="~/Views/Home/Index.cshtml">Home<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="~/Home/Index">Home<span class="sr-only">(current)</span></a>
                     </li>
 
                     @if (User.Identity.IsAuthenticated)
-                     {
+                    {
                         <li class="nav-item">
-                            @Html.ActionLink("Contacts", "Index", "Contact")
+                            <a class="nav-link" href="~/Contact">Contacts</a>
                         </li>
                     }
-               
-                <li class="nav-item">
-                    <a class="nav-link" href="~/Views/Home/About.cshtml">About</a>
-                </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Home/About">About</a>
+                    </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -82,6 +81,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/bootstrap-united")
     @RenderSection("scripts", required: false)
 </body>
 </html>

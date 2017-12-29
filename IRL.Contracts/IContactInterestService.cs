@@ -9,7 +9,7 @@ namespace IRL.Contracts
 {
     public interface IContactInterestService
     {
-        IEnumerable<Interest> GetContactInterests();
+        IEnumerable<ContactInterestData> GetContactInterests();
         bool IsSelected();
     }
 }

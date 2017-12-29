@@ -37,6 +37,8 @@ C:\dev\IRL\IRL.Services\obj\Debug\IRL.Services.csproj.CoreCompileInputs.cache
 C:\dev\IRL\IRL.Services\obj\Debug\IRL.Services.dll
 C:\dev\IRL\IRL.Services\obj\Debug\IRL.Services.pdb
 C:\dev\IRL\IRL.Services\bin\Debug\IRL.Contracts.dll.config
+C:\Users\wande\Desktop\IRL\IRL.Services\obj\Debug\IRL.Services.csproj.CoreCompileInputs.cache
+C:\Users\wande\Desktop\IRL\IRL.Services\obj\Debug\IRL.Services.csprojResolveAssemblyReference.cache
 C:\Users\wande\Desktop\IRL\IRL.Services\bin\Debug\IRL.Services.dll.config
 C:\Users\wande\Desktop\IRL\IRL.Services\bin\Debug\IRL.Services.dll
 C:\Users\wande\Desktop\IRL\IRL.Services\bin\Debug\IRL.Services.pdb
@@ -47,6 +49,7 @@ C:\Users\wande\Desktop\IRL\IRL.Services\bin\Debug\IRL.Data.dll
 C:\Users\wande\Desktop\IRL\IRL.Services\bin\Debug\IRL.Models.dll
 C:\Users\wande\Desktop\IRL\IRL.Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
 C:\Users\wande\Desktop\IRL\IRL.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\wande\Desktop\IRL\IRL.Services\bin\Debug\Newtonsoft.Json.dll
 C:\Users\wande\Desktop\IRL\IRL.Services\bin\Debug\IRL.Contracts.pdb
 C:\Users\wande\Desktop\IRL\IRL.Services\bin\Debug\IRL.Contracts.dll.config
 C:\Users\wande\Desktop\IRL\IRL.Services\bin\Debug\IRL.Data.pdb
@@ -57,9 +60,6 @@ C:\Users\wande\Desktop\IRL\IRL.Services\bin\Debug\EntityFramework.xml
 C:\Users\wande\Desktop\IRL\IRL.Services\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\wande\Desktop\IRL\IRL.Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\wande\Desktop\IRL\IRL.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\wande\Desktop\IRL\IRL.Services\obj\Debug\IRL.Services.csprojResolveAssemblyReference.cache
-C:\Users\wande\Desktop\IRL\IRL.Services\obj\Debug\IRL.Services.csproj.CoreCompileInputs.cache
+C:\Users\wande\Desktop\IRL\IRL.Services\bin\Debug\Newtonsoft.Json.xml
 C:\Users\wande\Desktop\IRL\IRL.Services\obj\Debug\IRL.Services.dll
 C:\Users\wande\Desktop\IRL\IRL.Services\obj\Debug\IRL.Services.pdb
-C:\Users\wande\Desktop\IRL\IRL.Services\bin\Debug\Newtonsoft.Json.dll
-C:\Users\wande\Desktop\IRL\IRL.Services\bin\Debug\Newtonsoft.Json.xml

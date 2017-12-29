@@ -1,10 +1,12 @@
 ﻿using IRL.Data;
 using IRL.Models;
 using IRL.Services;
+using IRL.ViewModels;
 using IRL.Web.Models;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -31,12 +33,35 @@ namespace IRL.Web.Controllers
         // GET: Contact
         private Guid _userId;
 
+        private ContactEntity contact = new ContactEntity();
+
         private ContactService CreateContactService()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new ContactService(userId);
+            var _userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new ContactService(_userId);
+            //var interestService = new InterestService().GetInterests();
             return service;
         }
+        //Attention
+        public void PopulateContactInterestData()
+        {
+            var interestSvc = new InterestService();
+            var allInterests = interestSvc.GetInterests();
+            var contactInterests = new HashSet<int>(contact.Interests.Select(i => i.InterestId));
+            var viewModel = new List<ViewModels.ContactInterestData>();
+            foreach (var interest in allInterests)
+            {
+                viewModel.Add(new ViewModels.ContactInterestData
+                {
+                    InterestId = interest.InterestId,
+                    Interest = interest.Item,
+                    Chosen = contactInterests.Contains(interest.InterestId)
+                });
+            }
+            ViewBag.Courses = viewModel;
+        }
+
+
 
         public ActionResult Index()
         {
@@ -47,17 +72,32 @@ namespace IRL.Web.Controllers
 
         public ActionResult Create()
         {
+            //var model = new ContactCreate();
+            //return View(model);
+            //TODO
             var model = new ContactCreate();
-            return View(model);
+            //model.Interests = new List<InterestListItem>();
+            //PopulateContactInterestData();
+            return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ContactCreate model)
+        public ActionResult Create(ContactCreate model, string[] chosenInterests)
         {
             if (!ModelState.IsValid) return View(model);
 
             var service = CreateContactService();
+
+            if (chosenInterests != null)
+            {
+                model.Interests = new List<InterestListItem>();
+                foreach (var interest in chosenInterests)
+                {
+                    var interestToAdd = model.Interests.FirstOrDefault(i => i.Item == interest);
+                    model.Interests.Add(interestToAdd);
+                }
+            }
 
             if (service.CreateContact(model))
             {
@@ -67,6 +107,7 @@ namespace IRL.Web.Controllers
 
             ModelState.AddModelError("", "An error occured. Please try again.");
 
+            //PopulateContactInterestData();
             return View(model);
         }
 
@@ -75,7 +116,6 @@ namespace IRL.Web.Controllers
             var service = CreateContactService();
             var contact = service.GetContactById(id);
 
-            PopulateContactInterestData(contact);
             var model =
                 new ContactEdit
                 {
@@ -87,25 +127,12 @@ namespace IRL.Web.Controllers
                     PhoneNumber = contact.PhoneNumber,
                     Notes = contact.Notes,
                 };
-            return View(model);
-        }
-
-        private void PopulateContactInterestData(ContactDetail contact)
-        {
-            var interestSvc = new InterestService();
-            var allInterests = interestSvc.GetInterests();
-            var contactInterests = new HashSet<int>(contact.Interests.Select(i => i.InterestId));
-            var viewModel = new List<ContactInterestData>();
-            foreach (var interest in allInterests)
+            //PopulateContactInterestData();
+            if (contact == null)
             {
-                viewModel.Add(new ContactInterestData
-                {
-                    InterestId = interest.InterestId,
-                    Interest = interest.Item,
-                    Chosen = contactInterests.Contains(interest.InterestId)
-                });
+                return HttpNotFound();
             }
-            ViewBag.Courses = viewModel;
+            return View(model);
         }
 
         [HttpPost]

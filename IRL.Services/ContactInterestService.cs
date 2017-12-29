@@ -9,7 +9,7 @@ using IRL.Contracts;
 
 namespace IRL.Services
 {
-    public class ContactInterestService /*: IContactInterestService*/
+    public class ContactInterestService : IContactInterestService
     {
         private Guid _userId;
 
@@ -18,18 +18,28 @@ namespace IRL.Services
             _userId = UserId;
         }
 
-        //private Interest GetInterestsFromDatabase(ApplicationDbContext context, int interestId, string item)
-        //{
-        //    return
-        //        context
-        //            .Interests
-        //            .SingleOrDefault(
-        //                   e =>
-        //                   e.InterestId == interestId &&
-        //                   e.Item == item);
-        //}
+        public IEnumerable<ContactInterestData> GetContactInterests()
+        {
+            throw new NotImplementedException();
+        }
 
-        public ICollection<InterestListItem> GetInterests()
+        public bool IsSelected()
+        {
+            throw new NotImplementedException();
+        }
+
+        private InterestEntity GetInterestsFromDatabase(ApplicationDbContext context, int interestId, string item)
+        {
+            return
+                context
+                    .Interests
+                    .SingleOrDefault(
+                           e =>
+                           e.InterestId == interestId &&
+                           e.Item == item);
+        }
+
+        public ICollection<InterestEntity> GetInterests()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -38,7 +48,7 @@ namespace IRL.Services
                         .Interests
                         .Select(
                             e =>
-                                new InterestListItem()
+                                new InterestEntity()
                                 {
                                     InterestId = e.InterestId,
                                     Item = e.Item,
@@ -48,7 +58,7 @@ namespace IRL.Services
             }
         }
 
-        public ICollection<Models.Interest> GetContactInterests(int contactId)
+        public ICollection<InterestEntity> GetContactInterests(int contactId)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -58,7 +68,7 @@ namespace IRL.Services
                         .Where(i => i.ContactId == contactId)
                         .Select(
                             e =>
-                                new Models.Interest()
+                                new InterestEntity()
                                 {
                                     InterestId = e.InterestId,
                                 }
@@ -71,11 +81,11 @@ namespace IRL.Services
         public bool AddInterest()
         {
             //TODO: persist item from Interest 
-            var model = new Models.Interest();
+            var model = new ContactInterestData();
             var entity =
-                new ContactInterest()
+                new ContactInterestEntity()
                 {
-                    ContactId = model.ContactId,
+                    ContactId = model.Id,
                     InterestId = model.InterestId,
                     //Item = item.ToString()
                 };
@@ -85,7 +95,6 @@ namespace IRL.Services
                 ctx.ContactInterests.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
-
         }
     }
 }

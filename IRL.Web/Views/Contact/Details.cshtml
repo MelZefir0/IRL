@@ -5,7 +5,7 @@
 }
 
 <h2>
-   @Html.DisplayFor(model => model.FullName) 
+    @Html.DisplayFor(model => model.FullName)
 </h2>
 
 <div>
@@ -69,7 +69,53 @@
         </dd>
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ContactId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+<div class="row">
+    <div class="container">
+        @*@foreach (var item in Model.Interests)
+                {
+                    <div class="row review">
+                        <div class="col-md-12">
+                            <p>
+                                @Html.DisplayFor(modelItem => item.InterestId)
+                            </p>
+                        </div>
+                    </div>
+            }*@
+
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        @*<table>
+            <tr>
+                @{
+                    int cnt = 0;
+                    List<IRL.ViewModels.ContactInterestData> interests = ViewBag.Interests;
+
+                    foreach (var interest in interests)
+                    {
+                        if (cnt++ % 3 == 0)
+                        {
+                            @:</tr><tr>
+                        }
+                        @:<td>
+                            <input type="checkbox"
+                                   name="chosenInterests"
+                                   value="@interest.InterestId"
+                                   @(Html.Raw(interest.Chosen ? "checked=\"checked\"" : "")) />
+                                   @interest.InterestId @:  @interest.Interest
+                      @:</td>
+                    }
+                    @:</tr>
+                }
+            </table>*@
+        </div>
+    </div>
+
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ContactId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
