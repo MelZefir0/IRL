@@ -42,10 +42,10 @@ namespace IRL.Data
             return new ApplicationDbContext();
         }
 
-        public DbSet<ContactEntity> Contacts { get; set; }
-        public DbSet<InterestEntity> Interests { get; set; }
-        public DbSet<UserInterestEntity> UserInterests { get; set; }
-        public DbSet<ContactInterestEntity> ContactInterests { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Interest> Interests { get; set; }
+        public DbSet<UserInterest> UserInterests { get; set; }
+        public DbSet<ContactInterest> ContactInterests { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -44,3 +44,4 @@ C:\Users\wande\Desktop\IRL\IRL.Models\bin\Debug\Newtonsoft.Json.xml
 C:\Users\wande\Desktop\IRL\IRL.Models\obj\Debug\IRL.Models.csproj.CoreCompileInputs.cache
 C:\Users\wande\Desktop\IRL\IRL.Models\obj\Debug\IRL.Models.dll
 C:\Users\wande\Desktop\IRL\IRL.Models\obj\Debug\IRL.Models.pdb
+C:\Users\wande\Desktop\IRL\IRL.Models\obj\Debug\IRL.Models.csprojResolveAssemblyReference.cache

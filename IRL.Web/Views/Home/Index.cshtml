@@ -3,26 +3,30 @@
 }
 
 <p>
-    
+
 </p>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>@Html.ActionLink("Manage Interests", "Index", "Interest")</h2>
-
-        <p>
-            
-        </p>
-        @*<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>*@
+@*@if (User.Identity.IsAuthenticated)
+{
+   <div class="row">
+    <div class="nav-menu image overlay">
+        <div class="list-group">
+            <a href="~/Home/Index" class="list-group-item list-group-item-action active">
+                Home
+            </a>
+            <a href="~/Contact" class="list-group-item list-group-item-action">
+                Contacts
+            </a>
+            <a href="~/Interest/Index" class="list-group-item list-group-item-action">
+                Your Interests
+            </a>
+            <a href="#" class="list-group-item list-group-item-action disabled">
+                Favorites
+            </a>
+        </div>
     </div>
-    @*<div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>*@
     <div class="col-md-4">
         <h2></h2>
     </div>
 </div>
-
+}*@
 

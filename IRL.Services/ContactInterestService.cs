@@ -28,7 +28,7 @@ namespace IRL.Services
             throw new NotImplementedException();
         }
 
-        private InterestEntity GetInterestsFromDatabase(ApplicationDbContext context, int interestId, string item)
+        private Interest GetInterestsFromDatabase(ApplicationDbContext context, int interestId, string item)
         {
             return
                 context
@@ -39,7 +39,7 @@ namespace IRL.Services
                            e.Item == item);
         }
 
-        public ICollection<InterestEntity> GetInterests()
+        public ICollection<Interest> GetInterests()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -48,7 +48,7 @@ namespace IRL.Services
                         .Interests
                         .Select(
                             e =>
-                                new InterestEntity()
+                                new Interest()
                                 {
                                     InterestId = e.InterestId,
                                     Item = e.Item,
@@ -58,7 +58,7 @@ namespace IRL.Services
             }
         }
 
-        public ICollection<InterestEntity> GetContactInterests(int contactId)
+        public ICollection<Interest> GetContactInterests(int contactId)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -68,7 +68,7 @@ namespace IRL.Services
                         .Where(i => i.ContactId == contactId)
                         .Select(
                             e =>
-                                new InterestEntity()
+                                new Interest()
                                 {
                                     InterestId = e.InterestId,
                                 }
@@ -83,7 +83,7 @@ namespace IRL.Services
             //TODO: persist item from Interest 
             var model = new ContactInterestData();
             var entity =
-                new ContactInterestEntity()
+                new ContactInterest()
                 {
                     ContactId = model.Id,
                     InterestId = model.InterestId,

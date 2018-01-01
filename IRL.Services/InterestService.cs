@@ -28,7 +28,7 @@ namespace IRL.Services
             _contactId = contactId;
         }
 
-        private InterestEntity GetInterestsFromDatabase(ApplicationDbContext context, int interestId, string item)
+        private Interest GetInterestsFromDatabase(ApplicationDbContext context, int interestId, string item)
         {
             return
                 context
@@ -39,7 +39,7 @@ namespace IRL.Services
                            e.Item == item);
         }
 
-        private UserInterestEntity GetUserInterestsFromDatabase(ApplicationDbContext context, int interestId, Guid _userId)
+        private UserInterest GetUserInterestsFromDatabase(ApplicationDbContext context, int interestId, Guid _userId)
         {
             return
                 context
@@ -50,7 +50,7 @@ namespace IRL.Services
                            e.UserId == _userId);
         }
 
-        private ContactInterestEntity GetContactInterestsFromDatabase(ApplicationDbContext context, int interestId, int contactId)
+        private ContactInterest GetContactInterestsFromDatabase(ApplicationDbContext context, int interestId, int contactId)
         {
             return
                 context
@@ -171,7 +171,7 @@ namespace IRL.Services
         {
             //TODO: persist item from Interest 
             var entity =
-                new UserInterestEntity()
+                new UserInterest()
                 {
                     UserId = _userId,
                     InterestId = model.InterestId,

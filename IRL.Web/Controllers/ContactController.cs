@@ -33,7 +33,7 @@ namespace IRL.Web.Controllers
         // GET: Contact
         private Guid _userId;
 
-        private ContactEntity contact = new ContactEntity();
+        private Contact contact = new Contact();
 
         private ContactService CreateContactService()
         {
@@ -78,7 +78,7 @@ namespace IRL.Web.Controllers
             var model = new ContactCreate();
             //model.Interests = new List<InterestListItem>();
             //PopulateContactInterestData();
-            return View();
+            return View(model);
         }
 
         [HttpPost]

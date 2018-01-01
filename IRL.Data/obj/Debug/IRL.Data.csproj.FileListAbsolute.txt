@@ -54,5 +54,5 @@ C:\Users\wande\Desktop\IRL\IRL.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFr
 C:\Users\wande\Desktop\IRL\IRL.Data\bin\Debug\Newtonsoft.Json.xml
 C:\Users\wande\Desktop\IRL\IRL.Data\obj\Debug\IRL.Data.dll
 C:\Users\wande\Desktop\IRL\IRL.Data\obj\Debug\IRL.Data.pdb
-C:\Users\wande\Desktop\IRL\IRL.Data\obj\Debug\IRL.Data.Migrations.Refactor.resources
+C:\Users\wande\Desktop\IRL\IRL.Data\obj\Debug\IRL.Data.Migrations.rebuild.resources
 C:\Users\wande\Desktop\IRL\IRL.Data\obj\Debug\IRL.Data.csproj.GenerateResource.Cache

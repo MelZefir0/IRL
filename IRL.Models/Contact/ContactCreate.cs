@@ -24,6 +24,8 @@ namespace IRL.Models
 
         public int PhoneNumber { get; set; }
 
+        public DateTime Birthday { get; set; }
+
         [MaxLength(8000)]
         public string Notes { get; set; }
 

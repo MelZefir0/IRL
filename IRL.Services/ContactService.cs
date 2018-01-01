@@ -19,7 +19,7 @@ namespace IRL.Services
             _userId = userId;
         }
 
-        private ContactEntity GetContactFromDatabase(ApplicationDbContext context, int contactId)
+        private Contact GetContactFromDatabase(ApplicationDbContext context, int contactId)
         {
             return
                 context
@@ -53,7 +53,7 @@ namespace IRL.Services
             //var interestService = new InterestService();
 
             var entity =
-                new ContactEntity()
+                new Contact()
                 {
                     UserId = _userId,
                     LastName = model.LastName,
@@ -61,6 +61,7 @@ namespace IRL.Services
                     Nickname = model.Nickname,
                     Address = model.Address,
                     PhoneNumber = model.PhoneNumber,
+                    Birthday = model.Birthday,
                     Notes = model.Notes,
                     CreatedUtc = DateTime.Now,
                     //Interests = interestService.GetInterests();
@@ -74,7 +75,7 @@ namespace IRL.Services
 
         public ContactDetail GetContactById(int contactId)
         {
-            ContactEntity entity;
+            Contact entity;
 
             using (var ctx = new ApplicationDbContext())
             {

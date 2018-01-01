@@ -52,7 +52,7 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="ClearScript, Version=5.4.9.0, Culture=neutral, PublicKeyToken=935d0c957da47c73, processorArchitecture=MSIL">
-      <HintPath>..\packages\JavaScriptEngineSwitcher.V8.2.4.2\lib\net45\ClearScript.dll</HintPath>
+      <HintPath>..\packages\JavaScriptEngineSwitcher.V8.2.4.10\lib\net45\ClearScript.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -60,17 +60,17 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="JavaScriptEngineSwitcher.ChakraCore, Version=2.4.8.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
-      <HintPath>..\packages\JavaScriptEngineSwitcher.ChakraCore.2.4.8\lib\net45\JavaScriptEngineSwitcher.ChakraCore.dll</HintPath>
+    <Reference Include="JavaScriptEngineSwitcher.ChakraCore, Version=2.4.11.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
+      <HintPath>..\packages\JavaScriptEngineSwitcher.ChakraCore.2.4.11\lib\net45\JavaScriptEngineSwitcher.ChakraCore.dll</HintPath>
     </Reference>
-    <Reference Include="JavaScriptEngineSwitcher.Core, Version=2.4.9.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
-      <HintPath>..\packages\JavaScriptEngineSwitcher.Core.2.4.9\lib\net45\JavaScriptEngineSwitcher.Core.dll</HintPath>
+    <Reference Include="JavaScriptEngineSwitcher.Core, Version=2.4.10.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
+      <HintPath>..\packages\JavaScriptEngineSwitcher.Core.2.4.10\lib\net45\JavaScriptEngineSwitcher.Core.dll</HintPath>
     </Reference>
-    <Reference Include="JavaScriptEngineSwitcher.Msie, Version=2.4.9.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
-      <HintPath>..\packages\JavaScriptEngineSwitcher.Msie.2.4.9\lib\net45\JavaScriptEngineSwitcher.Msie.dll</HintPath>
+    <Reference Include="JavaScriptEngineSwitcher.Msie, Version=2.4.11.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
+      <HintPath>..\packages\JavaScriptEngineSwitcher.Msie.2.4.11\lib\net45\JavaScriptEngineSwitcher.Msie.dll</HintPath>
     </Reference>
-    <Reference Include="JavaScriptEngineSwitcher.V8, Version=2.4.2.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
-      <HintPath>..\packages\JavaScriptEngineSwitcher.V8.2.4.2\lib\net45\JavaScriptEngineSwitcher.V8.dll</HintPath>
+    <Reference Include="JavaScriptEngineSwitcher.V8, Version=2.4.10.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
+      <HintPath>..\packages\JavaScriptEngineSwitcher.V8.2.4.10\lib\net45\JavaScriptEngineSwitcher.V8.dll</HintPath>
     </Reference>
     <Reference Include="JSPool, Version=3.0.1.0, Culture=neutral, PublicKeyToken=2fc7775f73072640, processorArchitecture=MSIL">
       <HintPath>..\packages\JSPool.3.0.1\lib\net451\JSPool.dll</HintPath>
@@ -165,8 +165,8 @@
     <Reference Include="Microsoft.AspNetCore.Mvc.Formatters.Json, Version=2.0.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNetCore.Mvc.Formatters.Json.2.0.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Formatters.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AspNetCore.Mvc.ViewFeatures, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.ViewFeatures.2.0.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.ViewFeatures.dll</HintPath>
+    <Reference Include="Microsoft.AspNetCore.Mvc.ViewFeatures, Version=2.0.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.ViewFeatures.2.0.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.ViewFeatures.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNetCore.ResponseCaching.Abstractions, Version=2.0.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNetCore.ResponseCaching.Abstractions.2.0.1\lib\netstandard2.0\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll</HintPath>
@@ -177,8 +177,8 @@
     <Reference Include="Microsoft.AspNetCore.Routing.Abstractions, Version=2.0.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNetCore.Routing.Abstractions.2.0.1\lib\netstandard2.0\Microsoft.AspNetCore.Routing.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AspNetCore.StaticFiles, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNetCore.StaticFiles.2.0.0\lib\netstandard2.0\Microsoft.AspNetCore.StaticFiles.dll</HintPath>
+    <Reference Include="Microsoft.AspNetCore.StaticFiles, Version=2.0.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.StaticFiles.2.0.1\lib\netstandard2.0\Microsoft.AspNetCore.StaticFiles.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNetCore.WebUtilities, Version=2.0.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNetCore.WebUtilities.2.0.1\lib\netstandard2.0\Microsoft.AspNetCore.WebUtilities.dll</HintPath>
@@ -271,8 +271,8 @@
     <Reference Include="Microsoft.Win32.Registry, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Win32.Registry.4.4.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
     </Reference>
-    <Reference Include="MsieJavaScriptEngine, Version=2.2.2.0, Culture=neutral, PublicKeyToken=a3a2846a37ac0d3e, processorArchitecture=MSIL">
-      <HintPath>..\packages\MsieJavaScriptEngine.2.2.2\lib\net45\MsieJavaScriptEngine.dll</HintPath>
+    <Reference Include="MsieJavaScriptEngine, Version=2.2.5.0, Culture=neutral, PublicKeyToken=a3a2846a37ac0d3e, processorArchitecture=MSIL">
+      <HintPath>..\packages\MsieJavaScriptEngine.2.2.5\lib\net45\MsieJavaScriptEngine.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -426,6 +426,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-united.css" />
+    <Content Include="Content\images\bridge.jpeg" />
+    <Content Include="Content\images\irllogo.svg" />
     <Content Include="Content\Script\bootstrap.js" />
     <Content Include="Content\Script\bootstrap.min.js" />
     <Content Include="Content\Script\contact.js" />
@@ -439,8 +441,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\trees.jpg" />
-    <Content Include="Content\images\parrot.jpg" />
-    <Content Include="Content\images\irllogo.svg" />
     <Content Include="Content\images\irllogowhite.svg" />
     <Content Include="Content\Script\owl.carousel.js" />
     <Content Include="Content\owl.theme.css" />
@@ -488,6 +488,7 @@
     <Content Include="Content\src\elements\CustomRadio\CustomRadio.jsx" />
     <Content Include="Content\src\index.js" />
     <Content Include="Content\src\logo.svg" />
+    <Content Include="Content\src\modernizr.custom.js" />
     <Content Include="Content\src\registerServiceWorker.js" />
     <Content Include="Content\src\routes\app.jsx" />
     <Content Include="Content\src\variables\Variables.jsx" />
@@ -499,6 +500,7 @@
     <Content Include="Content\src\views\Typography\Typography.jsx" />
     <Content Include="Content\src\views\Upgrade\Upgrade.jsx" />
     <Content Include="Content\src\views\UserProfile\UserProfile.jsx" />
+    <Content Include="Content\src\waypoints.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -552,8 +554,9 @@
     <Content Include="Content\src\assets\sass\light-bootstrap-dashboard.scss" />
     <Content Include="Content\package.json" />
     <Content Include="Content\package-lock.json" />
+    <Content Include="fonts\raleway_thin-webfont.eot" />
+    <Content Include="fonts\raleway_thin-webfont.woff" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
-    <Content Include="Scripts\bootstrap-ak.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
@@ -613,7 +616,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
-    <Content Include="Views\Contact\Create.cshtml" />
     <Content Include="Views\Contact\Details.cshtml" />
     <Content Include="Views\Contact\Edit.cshtml" />
     <Content Include="Views\Contact\Delete.cshtml" />
@@ -621,6 +623,7 @@
     <Content Include="Views\Interest\Select.cshtml" />
     <Content Include="Views\Contact\_ContIntCreate.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\HasTalked.cshtml" />
+    <Content Include="Views\Contact\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

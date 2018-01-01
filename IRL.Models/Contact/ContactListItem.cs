@@ -23,7 +23,5 @@ namespace IRL.Models
 
         [UIHint("Talked")]
         public bool HasTalked { get; set; }
-
-        public virtual ICollection<InterestListItem> Interests { get; set; }
     }
 }

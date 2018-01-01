@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en" class="no-js">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,46 +7,105 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
+
 <body>
-    <div class="navbar-main">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="#">@*<img class="logo-img" src="~/Content/images/irllogowhite.svg" />*@IRL</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarColor01">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="~/Home/Index">Home<span class="sr-only">(current)</span></a>
-                    </li>
-
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <li class="nav-item">
-                            <a class="nav-link" href="~/Contact">Contacts</a>
-                        </li>
-                    }
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="~/Home/About">About</a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                </form>
+    <div class="container">
+        <header id="ha-header" class="ha-header ha-header-small">
+            <div class="ha-header-perspective">
+                <div class="ha-header-front">
+                    <h1><span>IRL</span></h1>
+                    <nav>
+                        <a href="http://tympanus.net/Development/AnimatedBooks/">&lsaquo; Previous Demo</a>
+                        <a>Something</a>
+                        <a>Anything</a>
+                        <a href="http://tympanus.net/codrops/?p=15935">Back to the article</a>
+                    </nav>
+                </div>
             </div>
-        </nav>
+        </header>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - IRL </p>
-        </footer>
-    </div>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="row">
+            <page-wrap class="menu">
+                <div class="side-menu">
+                    <div class="nav-menu image overlay">
+                        <div class="list-group">
+                            <a href="~/Home/Index" class="list-group-item list-group-item-action active">
+                                Home
+                            </a>
+                            <a href="~/Contact" class="list-group-item list-group-item-action">
+                                Contacts
+                            </a>
+                            <a href="~/Interest/Index" class="list-group-item list-group-item-action">
+                                Your Interests
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action disabled">
+                                Favorites
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </page-wrap>
+            <div class="col-md-4">
+                <h2></h2>
+            </div>
+        </div>
+    }
 
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - IRL </p>
+            </footer>
+        </div>
 
+    <section class="ha-waypoint" data-animate-down="ha-header-small" data-animate-up="ha-header-color"></section>
+    <section class="ha-waypoint" data-animate-down="ha-header-box" data-animate-up="ha-header-small"></section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="~/Content/src/waypoints.min.js"></script>
+
+    <script>
+        var $head = $('#ha-header');
+        $('.ha-waypoint').each(function (i) {
+            var $el = $(this),
+                animClassDown = $el.data('animateDown'),
+                animClassUp = $el.data('animateUp');
+
+            $el.waypoint(function (direction) {
+                if (direction === 'down' && animClassDown) {
+                    $head.attr('class', 'ha-header ' + animClassDown);
+                }
+                else if (direction === 'up' && animClassUp) {
+                    $head.attr('class', 'ha-header ' + animClassUp);
+                }
+            }, { offset: '0%' });
+        });
+    </script>
+    <script>
+        $(function () {
+
+            var $sidemenu = $(".side-menu"),
+                $window = $(window),
+                offset = $sidemenu.offset(),
+                topPadding = 15;
+
+            $window.scroll(function () {
+                if ($window.scrollTop() > offset.top) {
+                    $sidemenu.stop().animate({
+                        marginTop: $window.scrollTop() - offset.top + topPadding
+                    });
+                } else {
+                    $sidemenu.stop().animate({
+                        marginTop: 0
+                    });
+                }
+            });
+
+        });
+    </script>
+   
     @*<div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -83,5 +142,7 @@
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/bootstrap-united")
     @RenderSection("scripts", required: false)
+
 </body>
+
 </html>
