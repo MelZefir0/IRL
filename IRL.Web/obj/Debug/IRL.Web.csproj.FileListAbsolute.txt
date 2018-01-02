@@ -404,6 +404,12 @@ C:\dev\IRL\IRL.Web\bin\roslyn\VBCSCompiler.exe
 C:\dev\IRL\IRL.Web\bin\roslyn\VBCSCompiler.exe.config
 C:\dev\IRL\IRL.Web\bin\Microsoft.AspNet.TelemetryCorrelation.dll
 C:\dev\IRL\IRL.Web\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\System.IO.Compression.dll
+C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\VBCSCompiler.exe
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\ApplicationInsights.config
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\IRL.Web.dll.config
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\IRL.Web.dll
@@ -415,13 +421,9 @@ C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\csi.exe
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\csi.exe.config
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\csi.rsp
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\Microsoft.Win32.Primitives.dll
@@ -431,7 +433,6 @@ C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\System.Console.dll
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\System.Diagnostics.Process.dll
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\System.IO.Compression.dll
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\System.IO.FileSystem.dll
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\System.IO.FileSystem.Primitives.dll
@@ -454,7 +455,6 @@ C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\System.Xml.XPath.XDocument.dll
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\vbc.exe
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\vbc.exe.config
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\vbc.rsp
-C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\VBCSCompiler.exe
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\Microsoft.Win32.Primitives.dll
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\netstandard.dll

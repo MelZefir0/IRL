@@ -20,6 +20,11 @@ using IRL.Data;
 
 namespace IRL.API.Controllers
 {
+#if !DEBUG
+    [RequireHttps]
+
+
+#endif
     [Authorize]
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
