@@ -7,35 +7,113 @@
     bottom: 0%;
 }
 
-
-/* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 30%;
     display: inline-block;
-    position: relative;
+    position: absolute;
+    left: 367px;
+    right:15px;
+    width: 100%;
     top: 15%;
     z-index: 1000;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
+.friendNews{
+    padding: 30px;
+}
+
+
+.postBox {
+    height: 200px;
+    position: center;
+    margin: 20px;
+    margin-bottom: 30px;
+    width: 90%;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: #b33709;
+}
+
+    .postBox:first-child{
+    margin-top: 0px;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-top-color: #b33709;
+    border-left-color: #b33709;
+}
+
+    .postBox img {
+        position: relative;
+        margin: 15px;
+        margin-top: 85px;
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        float: right;
+    }
+
+    .postBox:first-child img {
+        float: left;
+        margin-top: 15px;
+    }
+
+    .postBox p {
+        width: 80%;
+        display: block;
+        position: relative;
+        margin: 20px;
+        overflow: hidden;
+    }
+
+.postBox:first-child p {
+        width: 80%;
+        height: 100px;
+        border-style: solid;
+        border-color: black;
+        float: right;
+        margin-top: 15px;
+        border-style: solid;
+        border-color: black;
+    }
+.emptyPost type{
+    border-style: none;
+    border-color: Transparent;
+    overflow: auto;
+}
+
+/*.emptyPost {
+    width: 80%;
+    height: 100px;
+    border-style: solid;
+    border-color: black;
+    float: right;
+    margin-top: 15px;
+    border-style: solid;
+    border-color: black;
+    content: inherit;
+    display: block;
+    padding-top: 20px;
+}*/
+    
+    
+    .postBox:not(first-child) {
+        border-left-color: transparent;
+        border-top-color: transparent;
+    }
+
+    .postBox:last-child {
+        filter: blur;
+    }
+
 .dl-horizontal dt {
     white-space: normal;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
     max-width: 280px;
 }
 
-
-
-
-
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
 
 .navigation {
     font-family: 'Raleway', Arial, sans-serif;
@@ -50,6 +128,7 @@ textarea {
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
         -webkit-transition: all 0.35s ease;
+        -moz-transition: all 0.35s ease;
         transition: all 0.35s ease;
         float: right;
         position: sticky;
@@ -98,24 +177,14 @@ textarea {
             }
 
 
-
-
-            
-
-
 .list-group {
     position: relative;
     z-index: 1000;
 }
 
-.crop img {
-    height: 40px;
-    position: center;
-}
-
 .logo-img {
-    height: 40px;
-    width: 40px;
+    height: 80px;
+    width: 80px;
 }
 
 
@@ -135,6 +204,8 @@ textarea {
     width: 900px;
     margin: 5px auto;
     position: relative;
+    cursor: pointer;
+    
 }
 
 .side-menu {
@@ -142,6 +213,7 @@ textarea {
     left: 11%;
     bottom: 10px;
     position: fixed;
+    
 }
 
 .nav-menu {
@@ -156,6 +228,7 @@ textarea {
     color: white;
     padding-left: 30px;
     padding-top: 150px;
+    
 }
 
 
@@ -163,6 +236,7 @@ textarea {
     background-image: url('images/bridge.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
+    text-align: left;
 }
 
 .overlay:before{
@@ -183,17 +257,6 @@ textarea {
     display: inline-block;
     box-shadow: 10px 10px 5px grey;
 }
-
-
-.nav-menu * {
-    position: relative;
-}
-
-
-
-
-
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 
 *, *:after, *:before {
     -webkit-box-sizing: border-box;
@@ -227,6 +290,7 @@ section {
     section p {
         opacity: 1;
     }
+
 
 .scroll {
     position: fixed;
@@ -312,15 +376,12 @@ section {
     transform-origin: 50% 100%;
 }
 
-
-/* Justify inline-block elements (h1 on left side, nav on right) */
 .ha-header-perspective > div::after {
     content: '';
     display: inline-block;
     width: 100%;
 }
 
-/* Text styling */
 .ha-header h1,
 .ha-header h1::before,
 .ha-header h1 span,
@@ -396,13 +457,11 @@ section {
             margin-right: 0;
         }
 
-.ha-header .ha-header-front nav a:first-child,
-.ha-header .ha-header-front nav a:last-child {
+.ha-header .ha-header-front nav a {
     border: 2px solid #e74c3c;
 }
 
-    .ha-header .ha-header-front nav a:first-child:hover,
-    .ha-header .ha-header-front nav a:last-child:hover {
+    .ha-header .ha-header-front nav a:hover{
         border: 2px solid #bc3c2f;
     }
 
@@ -434,14 +493,23 @@ section {
     }
 
 .ha-header-box {
-    height: 100px;
-    width: 55px;
+    height: 35px;
+    width: 80px;
     top: 20px;
     left: 20px;
+    background-image: url('images/orangeburger.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
+    .ha-header-box:hover, .dropbtn:focus {
+        background-color: rgba(255,139,60,0.5);
+    }
+
+
     .ha-header-box h1 {
-        padding-left: 150px;
+        padding-left: 100px;
     }
 
     .ha-header-box h1,
@@ -450,7 +518,7 @@ section {
     }
 
         .ha-header-box h1:after {
-            opacity: 1;
+            opacity: 0;
         }
 
     .ha-header-box nav {
@@ -487,6 +555,20 @@ section {
 }
 
 @media screen and (max-width: 38em) {
+    .nav-menu {
+        display: none;
+    }
+
+    .ha-header-box h1 {
+        display: none;
+    }
+
+    .body-content{
+        position: absolute;
+        left: 2%; 
+        top: 150px;
+    }
+
     section {
         font-size: 1.3em;
     }

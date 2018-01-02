@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using IRL.API.Models;
+using IRL.Data;
 
 
 namespace IRL.API

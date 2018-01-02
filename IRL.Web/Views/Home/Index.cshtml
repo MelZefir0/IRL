@@ -3,30 +3,56 @@
 }
 
 <p>
-
+    <h2>Welcome, @User.Identity.Name.</h2>
 </p>
-@*@if (User.Identity.IsAuthenticated)
-{
-   <div class="row">
-    <div class="nav-menu image overlay">
-        <div class="list-group">
-            <a href="~/Home/Index" class="list-group-item list-group-item-action active">
-                Home
-            </a>
-            <a href="~/Contact" class="list-group-item list-group-item-action">
-                Contacts
-            </a>
-            <a href="~/Interest/Index" class="list-group-item list-group-item-action">
-                Your Interests
-            </a>
-            <a href="#" class="list-group-item list-group-item-action disabled">
-                Favorites
-            </a>
+<div class="friendNews">
+    <div class="postBox">
+        <div class="profpic">
+            <img src="~/Content/images/trees.jpg" />
         </div>
+        <p class="emptyPost">
+            <input type="text" />
+        </p>
     </div>
-    <div class="col-md-4">
-        <h2></h2>
+    <div class="postBox">
+        <div class="profpic">
+            <img src="~/Content/images/man-303792_640.png" />
+        </div>
+        <p class="postBox-content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+        </p>
+    </div>
+    <div class="postBox">
+        <div class="profpic">
+            <img src="~/Content/images/man-303792_640.png" />
+        </div>
+        <p class="postBox-content">
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+        </p>
+    </div>
+    <div class="postBox">
+        <div class="profpic">
+            <img src="~/Content/images/man-303792_640.png" />
+        </div>
+        <p class="postBox-content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+        </p>
+    </div>
+    <div class="postBox">
+        <div class="profpic">
+            <img src="~/Content/images/man-303792_640.png" />
+        </div>
+        <p class="postBox-content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+        </p>
+    </div>
+    <div class="postBox">
+        <div class="profpic">
+            <img src="~/Content/images/man-303792_640.png" />
+        </div>
+        <p class="postBox-content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+        </p>
     </div>
 </div>
-}*@
 

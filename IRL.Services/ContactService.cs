@@ -95,6 +95,7 @@ namespace IRL.Services
                     Nickname = entity.Nickname,
                     Address = entity.Address,
                     PhoneNumber = entity.PhoneNumber,
+                    Birthday = entity.Birthday,
                     Notes = entity.Notes,
                     CreatedUtc = entity.CreatedUtc,
                     //Interests = interestService.GetInterests()
@@ -119,6 +120,7 @@ namespace IRL.Services
                 entity.Nickname = model.Nickname;
                 entity.Address = model.Address;  
                 entity.PhoneNumber = model.PhoneNumber;
+                entity.Birthday = model.Birthday;
                 entity.Notes = model.Notes;
                 entity.HasTalked = model.HasTalked;
 

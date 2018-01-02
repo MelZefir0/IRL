@@ -16,6 +16,8 @@ namespace IRL.Models
         public string Address { get; set; }
         public int PhoneNumber { get; set; }
         public string Notes { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime Birthday { get; set; }
         public bool HasTalked { get; set; }
 
         public string FullName

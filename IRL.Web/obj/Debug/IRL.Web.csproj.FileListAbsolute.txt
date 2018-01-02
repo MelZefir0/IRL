@@ -404,8 +404,6 @@ C:\dev\IRL\IRL.Web\bin\roslyn\VBCSCompiler.exe
 C:\dev\IRL\IRL.Web\bin\roslyn\VBCSCompiler.exe.config
 C:\dev\IRL\IRL.Web\bin\Microsoft.AspNet.TelemetryCorrelation.dll
 C:\dev\IRL\IRL.Web\bin\Microsoft.AspNet.TelemetryCorrelation.xml
-C:\Users\wande\Desktop\IRL\IRL.Web\obj\Debug\IRL.Web.csprojResolveAssemblyReference.cache
-C:\Users\wande\Desktop\IRL\IRL.Web\obj\Debug\IRL.Web.csproj.CoreCompileInputs.cache
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\ApplicationInsights.config
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\IRL.Web.dll.config
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\IRL.Web.dll
@@ -768,5 +766,7 @@ C:\Users\wande\Desktop\IRL\IRL.Web\bin\ru-ru\JavaScriptEngineSwitcher.ChakraCore
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\ru-ru\JavaScriptEngineSwitcher.Core.resources.dll
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\ru-ru\JavaScriptEngineSwitcher.V8.resources.dll
 C:\Users\wande\Desktop\IRL\IRL.Web\bin\ru-ru\MsieJavaScriptEngine.resources.dll
+C:\Users\wande\Desktop\IRL\IRL.Web\obj\Debug\IRL.Web.csprojResolveAssemblyReference.cache
+C:\Users\wande\Desktop\IRL\IRL.Web\obj\Debug\IRL.Web.csproj.CoreCompileInputs.cache
 C:\Users\wande\Desktop\IRL\IRL.Web\obj\Debug\IRL.Web.dll
 C:\Users\wande\Desktop\IRL\IRL.Web\obj\Debug\IRL.Web.pdb

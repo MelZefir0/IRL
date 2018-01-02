@@ -10,6 +10,7 @@ using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using IRL.API.Models;
+using IRL.Data;
 
 namespace IRL.API.Providers
 {

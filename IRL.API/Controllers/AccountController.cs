@@ -16,6 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using IRL.API.Models;
 using IRL.API.Providers;
 using IRL.API.Results;
+using IRL.Data;
 
 namespace IRL.API.Controllers
 {

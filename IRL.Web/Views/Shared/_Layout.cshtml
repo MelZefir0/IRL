@@ -15,10 +15,13 @@
                 <div class="ha-header-front">
                     <h1><span>IRL</span></h1>
                     <nav>
-                        <a href="http://tympanus.net/Development/AnimatedBooks/">&lsaquo; Previous Demo</a>
-                        <a>Something</a>
-                        <a>Anything</a>
-                        <a href="http://tympanus.net/codrops/?p=15935">Back to the article</a>
+                        <a href="~/Home/About">| About |</a>
+                        @if (User.Identity.IsAuthenticated)
+                         { 
+                                <a href="~/Home/Index">| Home |</a>
+                                @*TODO: solve logoff handling*@
+                                <a href="javascript:document.getElementById('logoutForm').submit()">| Log off |</a>
+                         }
                     </nav>
                 </div>
             </div>
@@ -53,16 +56,17 @@
         </div>
     }
 
-        <div class="container body-content">
-            @RenderBody()
-            <hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - IRL </p>
-            </footer>
-        </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - IRL </p>
+        </footer>
+    </div>
 
     <section class="ha-waypoint" data-animate-down="ha-header-small" data-animate-up="ha-header-color"></section>
-    <section class="ha-waypoint" data-animate-down="ha-header-box" data-animate-up="ha-header-small"></section>
+    <section class="ha-waypoint" data-animate-down="ha-header-box" data-animate-up="ha-header-small"  onclick="dropDown()" id="drpbtn">
+    </section>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="~/Content/src/waypoints.min.js"></script>
 
@@ -89,7 +93,7 @@
             var $sidemenu = $(".side-menu"),
                 $window = $(window),
                 offset = $sidemenu.offset(),
-                topPadding = 15;
+                topPadding = 0;
 
             $window.scroll(function () {
                 if ($window.scrollTop() > offset.top) {
@@ -105,39 +109,6 @@
 
         });
     </script>
-   
-    @*<div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    @Html.ActionLink(" ", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            <li>@Html.ActionLink("Contacts", "Index", "Contact")</li>
-                        }
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-
-                    </ul>
-                    @Html.Partial("_LoginPartial")
-                </div>
-            </div>
-        </div>
-        <div class="container body-content">
-            @RenderBody()
-            <hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - IRL </p>
-            </footer>
-        </div>*@
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/bootstrap-united")
