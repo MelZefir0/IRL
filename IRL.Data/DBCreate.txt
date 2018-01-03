@@ -1,0 +1,148 @@
+﻿CREATE TABLE [dbo].[ApplicationUser] (
+    [Id]                   NVARCHAR (128) NOT NULL,
+    [Email]                NVARCHAR (MAX) NULL,
+    [EmailConfirmed]       BIT            NOT NULL,
+    [PasswordHash]         NVARCHAR (MAX) NULL,
+    [SecurityStamp]        NVARCHAR (MAX) NULL,
+    [PhoneNumber]          NVARCHAR (MAX) NULL,
+    [PhoneNumberConfirmed] BIT            NOT NULL,
+    [TwoFactorEnabled]     BIT            NOT NULL,
+    [LockoutEndDateUtc]    DATETIME       NULL,
+    [LockoutEnabled]       BIT            NOT NULL,
+    [AccessFailedCount]    INT            NOT NULL,
+    [UserName]             NVARCHAR (MAX) NULL,
+    CONSTRAINT [PK_dbo.ApplicationUser] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+
+
+CREATE TABLE [dbo].[Contact] (
+    [ContactId]   INT                IDENTITY (1, 1) NOT NULL,
+    [UserId]      UNIQUEIDENTIFIER   NOT NULL,
+    [FirstName]   NVARCHAR (MAX)     NOT NULL,
+    [LastName]    NVARCHAR (MAX)     NULL,
+    [Nickname]    NVARCHAR (MAX)     NULL,
+    [Address]     NVARCHAR (MAX)     NULL,
+    [PhoneNumber] INT                NOT NULL,
+    [Notes]       NVARCHAR (MAX)     NULL,
+    [Birthday]    DATETIME           NOT NULL,
+    [HasTalked]   BIT                NOT NULL,
+    [CreatedUtc]  DATETIMEOFFSET (7) NOT NULL,
+    CONSTRAINT [PK_dbo.Contact] PRIMARY KEY CLUSTERED ([ContactId] ASC)
+);
+
+
+CREATE TABLE [dbo].[ContactInterest] (
+    [Id]         INT IDENTITY (1, 1) NOT NULL,
+    [ContactId]  INT NOT NULL,
+    [InterestId] INT NOT NULL,
+    CONSTRAINT [PK_dbo.ContactInterest] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_dbo.ContactInterest_dbo.Contact_ContactId] FOREIGN KEY ([ContactId]) REFERENCES [dbo].[Contact] ([ContactId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_dbo.ContactInterest_dbo.Interest_InterestId] FOREIGN KEY ([InterestId]) REFERENCES [dbo].[Interest] ([InterestId]) ON DELETE CASCADE
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_ContactId]
+    ON [dbo].[ContactInterest]([ContactId] ASC);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_InterestId]
+    ON [dbo].[ContactInterest]([InterestId] ASC);
+
+CREATE TABLE [dbo].[IdentityRole] (
+    [Id]   NVARCHAR (128) NOT NULL,
+    [Name] NVARCHAR (MAX) NULL,
+    CONSTRAINT [PK_dbo.IdentityRole] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[IdentityUserClaim] (
+    [Id]                 INT            IDENTITY (1, 1) NOT NULL,
+    [UserId]             NVARCHAR (MAX) NULL,
+    [ClaimType]          NVARCHAR (MAX) NULL,
+    [ClaimValue]         NVARCHAR (MAX) NULL,
+    [ApplicationUser_Id] NVARCHAR (128) NULL,
+    CONSTRAINT [PK_dbo.IdentityUserClaim] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_dbo.IdentityUserClaim_dbo.ApplicationUser_ApplicationUser_Id] FOREIGN KEY ([ApplicationUser_Id]) REFERENCES [dbo].[ApplicationUser] ([Id])
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_ApplicationUser_Id]
+    ON [dbo].[IdentityUserClaim]([ApplicationUser_Id] ASC);
+
+CREATE TABLE [dbo].[IdentityUserLogin] (
+    [UserId]             NVARCHAR (128) NOT NULL,
+    [LoginProvider]      NVARCHAR (MAX) NULL,
+    [ProviderKey]        NVARCHAR (MAX) NULL,
+    [ApplicationUser_Id] NVARCHAR (128) NULL,
+    CONSTRAINT [PK_dbo.IdentityUserLogin] PRIMARY KEY CLUSTERED ([UserId] ASC),
+    CONSTRAINT [FK_dbo.IdentityUserLogin_dbo.ApplicationUser_ApplicationUser_Id] FOREIGN KEY ([ApplicationUser_Id]) REFERENCES [dbo].[ApplicationUser] ([Id])
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_ApplicationUser_Id]
+    ON [dbo].[IdentityUserLogin]([ApplicationUser_Id] ASC);
+
+
+
+	CREATE TABLE [dbo].[IdentityUserRole] (
+    [RoleId]             NVARCHAR (128) NOT NULL,
+    [UserId]             NVARCHAR (MAX) NULL,
+    [IdentityRole_Id]    NVARCHAR (128) NULL,
+    [ApplicationUser_Id] NVARCHAR (128) NULL,
+    CONSTRAINT [PK_dbo.IdentityUserRole] PRIMARY KEY CLUSTERED ([RoleId] ASC),
+    CONSTRAINT [FK_dbo.IdentityUserRole_dbo.IdentityRole_IdentityRole_Id] FOREIGN KEY ([IdentityRole_Id]) REFERENCES [dbo].[IdentityRole] ([Id]),
+    CONSTRAINT [FK_dbo.IdentityUserRole_dbo.ApplicationUser_ApplicationUser_Id] FOREIGN KEY ([ApplicationUser_Id]) REFERENCES [dbo].[ApplicationUser] ([Id])
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_IdentityRole_Id]
+    ON [dbo].[IdentityUserRole]([IdentityRole_Id] ASC);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_ApplicationUser_Id]
+    ON [dbo].[IdentityUserRole]([ApplicationUser_Id] ASC);
+
+
+
+	CREATE TABLE [dbo].[Interest] (
+    [InterestId]        INT            IDENTITY (1, 1) NOT NULL,
+    [Item]              NVARCHAR (MAX) NOT NULL,
+    [Contact_ContactId] INT            NULL,
+    CONSTRAINT [PK_dbo.Interest] PRIMARY KEY CLUSTERED ([InterestId] ASC),
+    CONSTRAINT [FK_dbo.Interest_dbo.Contact_Contact_ContactId] FOREIGN KEY ([Contact_ContactId]) REFERENCES [dbo].[Contact] ([ContactId])
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_Contact_ContactId]
+    ON [dbo].[Interest]([Contact_ContactId] ASC);
+
+
+
+	CREATE TABLE [dbo].[UserInterest] (
+    [Id]         INT              IDENTITY (1, 1) NOT NULL,
+    [UserId]     UNIQUEIDENTIFIER NOT NULL,
+    [InterestId] INT              NOT NULL,
+    CONSTRAINT [PK_dbo.UserInterest] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_dbo.UserInterest_dbo.Interest_InterestId] FOREIGN KEY ([InterestId]) REFERENCES [dbo].[Interest] ([InterestId]) ON DELETE CASCADE
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_InterestId]
+    ON [dbo].[UserInterest]([InterestId] ASC);
+
+
+
+	SELECT * FROM Interest;
+
+	SELECT * FROM Contact WHERE FirstName = "Jack";
+
+	SELECT * FROM Contact;

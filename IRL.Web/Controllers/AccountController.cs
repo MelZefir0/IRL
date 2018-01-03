@@ -13,7 +13,11 @@ using IRL.Data;
 
 namespace IRL.Web.Controllers
 {
-    [Authorize]
+//    [RequireHttps]
+//#if !DEBUG
+//[RequireHttps]
+//#endif
+    //[Authorize]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;

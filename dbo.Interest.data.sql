@@ -36,17 +36,4 @@ INSERT INTO [dbo].[Interest] ([InterestId], [Item]) VALUES (33, N'Live Music')
 INSERT INTO [dbo].[Interest] ([InterestId], [Item]) VALUES (34, N'Dogs')
 INSERT INTO [dbo].[Interest] ([InterestId], [Item]) VALUES (35, N'Politics')
 INSERT INTO [dbo].[Interest] ([InterestId], [Item]) VALUES (36, N'Sailing')
-
 SET IDENTITY_INSERT [dbo].[Interest] OFF
-
-
-
-
-
-
-
-
-
-
- 
-

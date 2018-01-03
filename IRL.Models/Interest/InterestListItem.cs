@@ -9,13 +9,15 @@ namespace IRL.Models
 {
     public class InterestListItem
     {
-
         [Key]
         public int InterestId { get; set; }
 
         public string Item { get; set; }
 
-        [UIHint("Checked")]
-        public bool IsChecked { get; set; }
+        public bool Chosen { get; set; }
+
+        //public virtual ICollection<Contact> Contacts { get; set; }
+        //public virtual ICollection<ApplicationUser> Users { get; set; }
+
     }
 }

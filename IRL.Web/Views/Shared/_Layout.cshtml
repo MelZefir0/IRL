@@ -1,48 +1,119 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en" class="no-js">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - IRL</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
+
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <div class="container">
+        <header id="ha-header" class="ha-header ha-header-small">
+            <div class="ha-header-perspective">
+                <div class="ha-header-front">
+                    <h1><span>IRL</span></h1>
+                    <nav>
+                        <a href="~/Home/About">| About |</a>
+                        @if (User.Identity.IsAuthenticated)
+        {
+                <a href="~/Home/Index">| Home |</a>
+                @*TODO: solve logoff handling*@
+                <a href="javascript:document.getElementById('logoutForm').submit()">| Log off |</a>
+}
+                    </nav>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                    <li>@Html.ActionLink("Contacts", "Index", "Contact")</li>
-                    }
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
+        </header>
+    </div>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="row">
+            <page-wrap class="menu">
+                <div class="side-menu">
+                    <div class="nav-menu image overlay">
+                        <div class="list-group">
+                            <a href="~/Home/Index" class="list-group-item list-group-item-action active">
+                                Home
+                            </a>
+                            <a href="~/Contact" class="list-group-item list-group-item-action">
+                                Contacts
+                            </a>
+                            <a href="~/Interest/Index" class="list-group-item list-group-item-action">
+                                Your Interests
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action disabled">
+                                Favorites
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </page-wrap>
+            <div class="col-md-4">
+                <h2></h2>
             </div>
         </div>
-    </div>
+    }
+
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - IRL </p>
         </footer>
     </div>
 
+    <section class="ha-waypoint" data-animate-down="ha-header-small" data-animate-up="ha-header-color"></section>
+    <section class="ha-waypoint" data-animate-down="ha-header-box" data-animate-up="ha-header-small"  onclick="dropDown()" id="drpbtn">
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="~/Content/src/waypoints.min.js"></script>
+
+    <script>
+        var $head = $('#ha-header');
+        $('.ha-waypoint').each(function (i) {
+            var $el = $(this),
+                animClassDown = $el.data('animateDown'),
+                animClassUp = $el.data('animateUp');
+
+            $el.waypoint(function (direction) {
+                if (direction === 'down' && animClassDown) {
+                    $head.attr('class', 'ha-header ' + animClassDown);
+                }
+                else if (direction === 'up' && animClassUp) {
+                    $head.attr('class', 'ha-header ' + animClassUp);
+                }
+            }, { offset: '0%' });
+        });
+    </script>
+    <script>
+        $(function () {
+
+            var $sidemenu = $(".side-menu"),
+                $window = $(window),
+                offset = $sidemenu.offset(),
+                topPadding = 0;
+
+            $window.scroll(function () {
+                if ($window.scrollTop() > offset.top) {
+                    $sidemenu.stop().animate({
+                        marginTop: $window.scrollTop() - offset.top + topPadding
+                    });
+                } else {
+                    $sidemenu.stop().animate({
+                        marginTop: 0
+                    });
+                }
+            });
+
+        });
+    </script>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/bootstrap-united")
     @RenderSection("scripts", required: false)
+
 </body>
+
 </html>

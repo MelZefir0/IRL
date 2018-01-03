@@ -15,6 +15,8 @@ namespace IRL.Models
         public string Nickname { get; set; }
         public string Address { get; set; }
         public int PhoneNumber { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime Birthday { get; set; }
         public string Notes { get; set; }
         [Display(Name="Created")]
         public DateTimeOffset CreatedUtc { get; set; }
@@ -27,5 +29,6 @@ namespace IRL.Models
             }
         }
 
+        public virtual ICollection<InterestListItem> Interests { get; set; }
     }
 }

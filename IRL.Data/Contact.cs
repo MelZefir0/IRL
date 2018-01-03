@@ -1,6 +1,9 @@
-﻿using System;
+﻿using IRL.Models;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +20,6 @@ namespace IRL.Data
         [Required]
         public string FirstName { get; set; }
 
-        [Required]
         public string LastName { get; set; }
 
         public string Nickname { get; set; }
@@ -28,7 +30,15 @@ namespace IRL.Data
 
         public string Notes { get; set; }
 
+        //[DataType(DataType.Date)]
+        public DateTime Birthday { get; set; }
+
+        [DefaultValue(false)]
+        public bool HasTalked { get; set; }
+
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
+
+        public virtual ICollection<Interest> Interests { get; set; }
     }
 }

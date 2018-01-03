@@ -3,6 +3,7 @@ using IRL.Data;
 using IRL.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,8 +27,31 @@ namespace IRL.Services
                     .SingleOrDefault(e => e.ContactId == contactId && e.UserId == _userId);
         }
 
+        public IEnumerable<ContactListItem> GetContacts()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return
+                    ctx
+                        .Contacts
+                        .Where(e => e.UserId == _userId)
+                        .Select(
+                            e =>
+                            new ContactListItem
+                            {
+                                ContactId = e.ContactId,
+                                FirstName = e.FirstName,
+                                CreatedUTC = e.CreatedUtc,
+                                HasTalked = e.HasTalked
+                            })
+                    .ToArray();
+            }
+        }
+
         public bool CreateContact(ContactCreate model)
         {
+            //var interestService = new InterestService();
+
             var entity =
                 new Contact()
                 {
@@ -37,34 +61,15 @@ namespace IRL.Services
                     Nickname = model.Nickname,
                     Address = model.Address,
                     PhoneNumber = model.PhoneNumber,
+                    Birthday = model.Birthday,
                     Notes = model.Notes,
-                    CreatedUtc = DateTime.Now
+                    CreatedUtc = DateTime.Now,
+                    //Interests = interestService.GetInterests();
                 };
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Contacts.Add(entity);
                 return ctx.SaveChanges() == 1;
-            }
-        }
-
-        public IEnumerable<ContactListItem> GetContacts()
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var query =
-                    ctx
-                    .Contacts
-                    .Where(e => e.UserId == _userId)
-                    .Select(
-                        e =>
-                        new ContactListItem
-                        {
-                            ContactId = e.ContactId,
-                            FirstName = e.FirstName,
-                            CreatedUTC = e.CreatedUtc
-                        }
-                    );
-                return query.ToArray();
             }
         }
 
@@ -74,41 +79,50 @@ namespace IRL.Services
 
             using (var ctx = new ApplicationDbContext())
             {
-                entity = GetContactFromDatabase(ctx, contactId);
+               entity = GetContactFromDatabase(ctx, contactId);
             }
 
             if (entity == null) return new ContactDetail();
+ ;
+            //var interestService = new InterestService();
 
             return
-                new ContactDetail
-                {
+               new ContactDetail
+               {
                     ContactId = entity.ContactId,
                     FirstName = entity.FirstName,
                     LastName = entity.LastName,
                     Nickname = entity.Nickname,
                     Address = entity.Address,
                     PhoneNumber = entity.PhoneNumber,
+                    Birthday = entity.Birthday,
                     Notes = entity.Notes,
-                    CreatedUtc = entity.CreatedUtc
+                    CreatedUtc = entity.CreatedUtc,
+                    //Interests = interestService.GetInterests()
+                    //Interests = interestService.GetContactInterests(contactId)
+               };
 
-                };
         }
-
 
         public bool UpdateContact(ContactEdit model)
         {
             using (var ctx = new ApplicationDbContext())
-            {
-                var entity = GetContactFromDatabase(ctx, model.ContactId);
+            { 
+
+                var contactId = model.ContactId;
+                var entity = GetContactFromDatabase(ctx, contactId);
+                //var contactInterests = new InterestService().GetContactInterests(contactId);
 
                 if (entity == null) return false;
 
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
                 entity.Nickname = model.Nickname;
-                entity.Address = model.Address;
+                entity.Address = model.Address;  
                 entity.PhoneNumber = model.PhoneNumber;
+                entity.Birthday = model.Birthday;
                 entity.Notes = model.Notes;
+                entity.HasTalked = model.HasTalked;
 
                 return ctx.SaveChanges() == 1;
             }
@@ -130,5 +144,4 @@ namespace IRL.Services
             }
         }
     }
-
 }

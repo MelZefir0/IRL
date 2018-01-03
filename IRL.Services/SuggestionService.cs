@@ -5,17 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using IRL.Models;
+using IRL.Data;
 
 namespace IRL.Services
 {
     public class SuggestionService : ISuggestionService
     {
-        public IEnumerable<ContactInterest> GetContactInterests()
+        public IEnumerable<ContactInterestData> GetContactInterests()
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<UserInterest> GetUserInterests()
+        public IEnumerable<UserInterestModel> GetUserInterests()
         {
             throw new NotImplementedException();
         }

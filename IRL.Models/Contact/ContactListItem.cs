@@ -20,5 +20,15 @@ namespace IRL.Models
         public DateTimeOffset CreatedUTC { get; set; }
 
         public override string ToString() => FirstName;
+
+        public bool HasTalked { get; set; }
+
+        public string FullName
+        {
+            get
+            {
+                return FirstName + " " + LastName;
+            }
+        }
     }
 }
