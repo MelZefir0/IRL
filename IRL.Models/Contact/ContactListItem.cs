@@ -21,7 +21,14 @@ namespace IRL.Models
 
         public override string ToString() => FirstName;
 
-        [UIHint("Talked")]
         public bool HasTalked { get; set; }
+
+        public string FullName
+        {
+            get
+            {
+                return FirstName + " " + LastName;
+            }
+        }
     }
 }

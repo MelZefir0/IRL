@@ -20,37 +20,37 @@
         @TempData["SaveResult"]
     </div>
 }
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ContactId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedUTC)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HasTalked)
-        </th>
-        <th></th>
-    </tr>
+    <table class="table">
+        <tr>
+            @*<th>
+                @Html.DisplayNameFor(model => model.ContactId)
+            </th>*@
+            <th>
+                Name
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedUTC)
+            </th>
+            <th>
+                Set Reminder
+            </th>
+            <th></th>
+        </tr>
 
-    @foreach (var item in Model)
+        @foreach (var item in Model)
     {
         <tr>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.ContactId)
-            </td>
+            </td>*@
             <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
+                @Html.DisplayFor(modelItem => item.FullName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CreatedUTC)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.HasTalked, new { contactId = item.ContactId })
+                @Html.CheckBoxFor(modelItem => item.HasTalked, new { contactId = item.ContactId })
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ContactId }) |
@@ -58,9 +58,9 @@
                 @Html.ActionLink("Delete", "Delete", new { id = item.ContactId })
             </td>
         </tr>
-    }
+}
 
-</table>
+    </table>
 @section scripts {
     <script language="javascript" type="text/javascript">
         $(document).ready(function () {

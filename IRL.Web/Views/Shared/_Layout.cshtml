@@ -17,11 +17,11 @@
                     <nav>
                         <a href="~/Home/About">| About |</a>
                         @if (User.Identity.IsAuthenticated)
-                         { 
-                                <a href="~/Home/Index">| Home |</a>
-                                @*TODO: solve logoff handling*@
-                                <a href="javascript:document.getElementById('logoutForm').submit()">| Log off |</a>
-                         }
+        {
+                <a href="~/Home/Index">| Home |</a>
+                @*TODO: solve logoff handling*@
+                <a href="javascript:document.getElementById('logoutForm').submit()">| Log off |</a>
+}
                     </nav>
                 </div>
             </div>

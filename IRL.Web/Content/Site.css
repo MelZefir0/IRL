@@ -79,6 +79,19 @@
     border-color: Transparent;
     overflow: auto;
 }
+.postButton{
+    float:right;
+    position: absolute;
+    left: 880px;
+    top: 230px;
+}
+.btn-outline-secondary {
+     color: black;
+}
+
+    .btn-outline-secondary:hover {
+        background-color: orangered;
+    }
 
 /*.emptyPost {
     width: 80%;
@@ -275,7 +288,6 @@ body {
     font-size: 10px;
 }
 
-/* Content style */
 section {
     width: 90%;
     max-width: 46em;
@@ -320,8 +332,6 @@ section {
         font-size: 3em;
         line-height: 1;
     }
-
-/* Header styles and animations */
 
 .ha-header {
     position: fixed;

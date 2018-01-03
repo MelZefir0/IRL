@@ -24,7 +24,6 @@ namespace IRL.Models
 
         public int PhoneNumber { get; set; }
 
-        [DataType(DataType.Date)]
         public DateTime Birthday { get; set; }
 
         [MaxLength(8000)]

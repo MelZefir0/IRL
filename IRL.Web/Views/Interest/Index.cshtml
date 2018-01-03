@@ -6,10 +6,6 @@
 
 <h2>Add Your Interests</h2>
 
-@*<p>
-        @Html.ActionLink("Create New", "Create")
-    </p>*@
-
 @if (TempData.ContainsKey("SaveResult"))
 {
     <div class="alert alert-success fade in" role="alert">
@@ -20,27 +16,22 @@
     </div>
 }
 <table class="table">
-        @using (Html.BeginForm())
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        foreach (var item in Model)
         {
-            @Html.AntiForgeryToken()
-            foreach (var item in Model)
-            {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Item)
-        </td>
-
-        @*<td>
-            @Html.ActionLink("Add Interest", "Select", new { interestId = item.InterestId })
-        </td>*@
-        <td>
-            @Html.DisplayFor(modelItem => item.Chosen, new { Id = item.InterestId })
-        </td>
-
-    </tr>
-            }
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Item)
+                </td>
+                <td>
+                    @Html.CheckBoxFor(modelItem => item.Chosen, new { Id = item.InterestId })
+                </td>
+            </tr>
         }
-    </table>
-    <div>
-        @Html.ActionLink("Back", "Index", "Home")
-    </div>
+    }
+</table>
+<div>
+    @Html.ActionLink("Back", "Index", "Home")
+</div>

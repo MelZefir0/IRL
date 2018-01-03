@@ -78,7 +78,7 @@ namespace IRL.Web.Controllers
             //TODO
             var model = new ContactCreate();
             //model.Interests = new List<InterestListItem>();
-            //PopulateContactInterestData();
+            PopulateContactInterestData();
             return View(model);
         }
 
@@ -108,7 +108,7 @@ namespace IRL.Web.Controllers
 
             ModelState.AddModelError("", "An error occured. Please try again.");
 
-            //PopulateContactInterestData();
+            PopulateContactInterestData();
             return View(model);
         }
 
@@ -126,6 +126,7 @@ namespace IRL.Web.Controllers
                     Nickname = contact.Nickname,
                     Address = contact.Address,
                     PhoneNumber = contact.PhoneNumber,
+                    Birthday = contact.Birthday,
                     Notes = contact.Notes,
                 };
             //PopulateContactInterestData();

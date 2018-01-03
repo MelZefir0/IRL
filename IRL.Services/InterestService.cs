@@ -65,15 +65,15 @@ namespace IRL.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-               return
-                    ctx
-                        .Interests
-                        .Select(
-                            e =>
-                                new InterestListItem()
-                                {
-                                    InterestId = e.InterestId,
-                                    Item = e.Item
+                return
+                     ctx
+                         .Interests
+                         .Select(
+                             e =>
+                                 new InterestListItem()
+                                 {
+                                     InterestId = e.InterestId,
+                                     Item = e.Item
                                 })
                        .ToList();
             }

@@ -30,7 +30,7 @@ namespace IRL.Data
 
         public string Notes { get; set; }
 
-        [DataType(DataType.Date)]
+        //[DataType(DataType.Date)]
         public DateTime Birthday { get; set; }
 
         [DefaultValue(false)]
