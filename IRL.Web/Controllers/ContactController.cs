@@ -78,7 +78,7 @@ namespace IRL.Web.Controllers
             //TODO
             var model = new ContactCreate();
             //model.Interests = new List<InterestListItem>();
-            PopulateContactInterestData();
+            //PopulateContactInterestData();
             return View(model);
         }
 
@@ -108,7 +108,7 @@ namespace IRL.Web.Controllers
 
             ModelState.AddModelError("", "An error occured. Please try again.");
 
-            PopulateContactInterestData();
+            //PopulateContactInterestData();
             return View(model);
         }
 

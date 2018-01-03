@@ -92,21 +92,6 @@
     .btn-outline-secondary:hover {
         background-color: orangered;
     }
-
-/*.emptyPost {
-    width: 80%;
-    height: 100px;
-    border-style: solid;
-    border-color: black;
-    float: right;
-    margin-top: 15px;
-    border-style: solid;
-    border-color: black;
-    content: inherit;
-    display: block;
-    padding-top: 20px;
-}*/
-    
     
     .postBox:not(first-child) {
         border-left-color: transparent;
