@@ -141,3 +141,5 @@ C:\Users\wande\Desktop\IRL\IRL.API\bin\IRL.Services.pdb
 C:\Users\wande\Desktop\IRL\IRL.API\bin\IRL.Services.dll.config
 C:\Users\wande\Desktop\IRL\IRL.API\bin\IRL.Contracts.pdb
 C:\Users\wande\Desktop\IRL\IRL.API\bin\IRL.Contracts.dll.config
+C:\Users\wande\Desktop\IRL\IRL.API\bin\Swashbuckle.Core.dll
+C:\Users\wande\Desktop\IRL\IRL.API\bin\WebActivatorEx.dll

@@ -1,4 +1,5 @@
-﻿using IRL.Data;
+﻿using IRL.Contracts;
+using IRL.Data;
 using IRL.Models;
 using IRL.Services;
 using IRL.ViewModels;
@@ -17,18 +18,18 @@ namespace IRL.Web.Controllers
     [Authorize]
     public class ContactController : Controller
     {
-        //private readonly Lazy<IContactService> _contactService;
+        private readonly Lazy<IContactService> _contactService;
 
-        //public ContactController()
-        //{                      
-        //    _contactService = new Lazy<IContactService>(() =>
-        //        new ContactService(Guid.Parse(User.Identity.GetUserId())));
-        //}
+        public ContactController()
+        {                      
+            _contactService = new Lazy<IContactService>(() =>
+                new ContactService(Guid.Parse(User.Identity.GetUserId())));
+        }
 
-        //public ContactController(Lazy<IContactService> contactService)
-        //{
-        //    _contactService = contactService;
-        //}
+        public ContactController(Lazy<IContactService> contactService)
+        {
+            _contactService = contactService;
+        }
 
         // GET: Contact
         private Guid _userId;
